@@ -21,5 +21,10 @@ namespace SE_ASS
         {
             textBox1.Text = "Super test";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "Hey You";
+        }
     }
 }

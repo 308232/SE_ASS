@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SE_ASS
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "Super test";
         }
     }
 }

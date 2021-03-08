@@ -16,7 +16,7 @@ namespace SE_ASS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MenuForm());
         }
     }
 }

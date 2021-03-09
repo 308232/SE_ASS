@@ -51,6 +51,7 @@ namespace SE_ASS
             this.btnCreateNewClientContract.TabIndex = 1;
             this.btnCreateNewClientContract.Text = "CREATE NEW CLIENT CONTRACT";
             this.btnCreateNewClientContract.UseVisualStyleBackColor = true;
+            this.btnCreateNewClientContract.Click += new System.EventHandler(this.btnCreateNewClientContract_Click);
             // 
             // MainForm
             // 

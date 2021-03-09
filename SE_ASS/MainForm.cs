@@ -16,5 +16,12 @@ namespace SE_ASS
         {
             InitializeComponent();
         }
+
+        private void btnCreateNewClientContract_Click(object sender, EventArgs e)
+        {
+            NewClientForm NewClientForm = new NewClientForm();
+            this.Hide();
+            NewClientForm.Show();
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace SE_ASS
                 this.Hide();
                 MainForm.Show();
             }
-            else if ((txtUserName.Text == "LC") && (txtPassword.Text == "asdf"))
+            else if ((txtUserName.Text == "LC") && (txtPassword.Text == "as"))
             {
                 userRights = "LC";
 
@@ -47,7 +47,7 @@ namespace SE_ASS
                 this.Hide();
                 MainForm.Show();
             }
-            else if ((txtUserName.Text == "Couriers") && (txtPassword.Text == "as"))
+            else if ((txtUserName.Text == "Couriers") && (txtPassword.Text == "a"))
             {
                 userRights = "Couriers";
 

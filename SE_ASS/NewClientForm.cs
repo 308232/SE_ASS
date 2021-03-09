@@ -119,6 +119,7 @@ namespace SE_ASS
             myUpdateDB.DataAdapter.Update(dsCustomer.Tables["Customers"]);
             
             MoveRecords();
+            
         }
 
         private void btnAddNewClient_Click(object sender, EventArgs e)
@@ -132,6 +133,7 @@ namespace SE_ASS
             txtboxEmail.Clear();
             txtboxNotes.Clear();
             txtboxAssId.Clear();
+            
         }
 
       

@@ -220,42 +220,46 @@ namespace SE_ASS
             // 
             // btnFirstRecordClientsForm
             // 
+            this.btnFirstRecordClientsForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnFirstRecordClientsForm.Location = new System.Drawing.Point(446, 114);
             this.btnFirstRecordClientsForm.Name = "btnFirstRecordClientsForm";
             this.btnFirstRecordClientsForm.Size = new System.Drawing.Size(95, 43);
             this.btnFirstRecordClientsForm.TabIndex = 20;
-            this.btnFirstRecordClientsForm.Text = "FirstRecord";
-            this.btnFirstRecordClientsForm.UseVisualStyleBackColor = true;
+            this.btnFirstRecordClientsForm.Text = "FIRST RECORD";
+            this.btnFirstRecordClientsForm.UseVisualStyleBackColor = false;
             this.btnFirstRecordClientsForm.Click += new System.EventHandler(this.btnFirstRecordClientsForm_Click);
             // 
             // btnNextRecordClientsForm
             // 
+            this.btnNextRecordClientsForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnNextRecordClientsForm.Location = new System.Drawing.Point(446, 184);
             this.btnNextRecordClientsForm.Name = "btnNextRecordClientsForm";
-            this.btnNextRecordClientsForm.Size = new System.Drawing.Size(95, 52);
+            this.btnNextRecordClientsForm.Size = new System.Drawing.Size(95, 45);
             this.btnNextRecordClientsForm.TabIndex = 21;
             this.btnNextRecordClientsForm.Text = "NEXT RECORD";
-            this.btnNextRecordClientsForm.UseVisualStyleBackColor = true;
+            this.btnNextRecordClientsForm.UseVisualStyleBackColor = false;
             this.btnNextRecordClientsForm.Click += new System.EventHandler(this.btnNextRecordClientsForm_Click);
             // 
             // btnSaveNewClientRecord
             // 
-            this.btnSaveNewClientRecord.Location = new System.Drawing.Point(733, 360);
+            this.btnSaveNewClientRecord.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnSaveNewClientRecord.Location = new System.Drawing.Point(762, 137);
             this.btnSaveNewClientRecord.Name = "btnSaveNewClientRecord";
             this.btnSaveNewClientRecord.Size = new System.Drawing.Size(94, 69);
             this.btnSaveNewClientRecord.TabIndex = 22;
             this.btnSaveNewClientRecord.Text = "SAVE ";
-            this.btnSaveNewClientRecord.UseVisualStyleBackColor = true;
+            this.btnSaveNewClientRecord.UseVisualStyleBackColor = false;
             this.btnSaveNewClientRecord.Click += new System.EventHandler(this.btnSaveNewClientRecord_Click);
             // 
             // btnAddNewClient
             // 
-            this.btnAddNewClient.Location = new System.Drawing.Point(630, 360);
+            this.btnAddNewClient.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnAddNewClient.Location = new System.Drawing.Point(659, 137);
             this.btnAddNewClient.Name = "btnAddNewClient";
             this.btnAddNewClient.Size = new System.Drawing.Size(97, 69);
             this.btnAddNewClient.TabIndex = 23;
             this.btnAddNewClient.Text = "ADD NEW CLIENT";
-            this.btnAddNewClient.UseVisualStyleBackColor = true;
+            this.btnAddNewClient.UseVisualStyleBackColor = false;
             this.btnAddNewClient.Click += new System.EventHandler(this.btnAddNewClient_Click);
             // 
             // NewClientForm

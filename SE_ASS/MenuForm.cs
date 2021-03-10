@@ -37,25 +37,25 @@ namespace SE_ASS
             {
                 userRights = "Admin";
 
-                MainForm MainForm = new MainForm();
+                AdminForm AdminForm = new AdminForm();
                 this.Hide();
-                MainForm.Show();
+                AdminForm.Show();
             }
             else if ((txtUserName.Text == "LC") && (txtPassword.Text == "as"))
             {
                 userRights = "LC";
 
-                MainForm MainForm = new MainForm();
+               LcForm LcForm = new LcForm();
                 this.Hide();
-                MainForm.Show();
+                LcForm.Show();
             }
             else if ((txtUserName.Text == "Couriers") && (txtPassword.Text == "a"))
             {
                 userRights = "Couriers";
 
-                MainForm MainForm = new MainForm();
+                CourrierForm CourrierForm = new CourrierForm();
                 this.Hide();
-                MainForm.Show();
+               CourrierForm.Show();
             }
             else
             {

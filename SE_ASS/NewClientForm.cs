@@ -54,6 +54,8 @@ namespace SE_ASS
             newCon.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Mitko Bozhilov\\Work Year 6\\Software Eng\\Ass\\MyDataBase\\MyDataBase\\BookingSystemDataBase.mdf;Integrated Security=True; Connect Timeout=30";
 
             dsCustomer = new DataSet();
+            
+
             //a private string to pass the data from the database to. 
             String sqlGetWhat;
             //in order to read the dataabse sql code is used as shown below 
@@ -66,6 +68,9 @@ namespace SE_ASS
                 //setting the data adapter and filling it with the information 
                 daCustomer = new System.Data.SqlClient.SqlDataAdapter(sqlGetWhat, newCon);
                 daCustomer.Fill(dsCustomer, "Customers");
+
+
+                
 
                 MoveRecords();
                 countrec = dsCustomer.Tables["Customers"].Rows.Count;
@@ -139,6 +144,50 @@ namespace SE_ASS
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEditRecordClientsForm_Click(object sender, EventArgs e)
+        {
+            
+            String sqlGetWhatt;
+            //in order to read the dataabse sql code is used as shown below 
+            sqlGetWhatt = "UPDATE ClientsTbl SET BusinessName='" + txtboxBusinessName.Text + "', HouseNo='" + txtboxHouseNo.Text + "',StreetName='" + txtboxStreetName.Text + "', PostCode='" + txtboxPostCode.Text + "', PhoneNumber='" + txtboxPhoneNumber.Text + "', Email='" + txtboxEmail.Text + "', Notes='" + txtboxNotes.Text + "' WHERE ClientID=" + txtboxClientID.Text + " , newCon ";
+
+            
+
+            
+
+            //Create the SelectCommand of the DataAdatper
+            SqlCommand cmClient = new SqlCommand();
+            cmClient.Connection = newCon;
+            cmClient.CommandType = CommandType.Text;
+            cmClient.CommandText = "UPDATE ClientsTbl SET BusinessName='" + txtboxBusinessName.Text + "', HouseNo='" + txtboxHouseNo.Text + "',StreetName='" + txtboxStreetName.Text + "', PostCode='" + txtboxPostCode.Text + "', PhoneNumber='" + txtboxPhoneNumber.Text + "', Email='" + txtboxEmail.Text + "', Notes='" + txtboxNotes.Text + "' WHERE ClientID=" + txtboxClientID.Text + " , newCon ";
+            SqlDataAdapter daClient = new SqlDataAdapter(cmClient);
+
+            //Use the sqlCommandBuilder to generate the UpdateCommand
+          
+           
+
+            //Update the database
+            System.Data.SqlClient.SqlCommandBuilder myUpdateDB;
+            myUpdateDB = new System.Data.SqlClient.SqlCommandBuilder(daCustomer);
+            myUpdateDB.DataAdapter.Update(dsCustomer.Tables["Customers"]);
+
+        }
+
+        private void btnLastRecordClientsForm_Click(object sender, EventArgs e)
+        {
+            whichrec = countrec - 1;
+            MoveRecords();
+        }
+
+        private void btnPreviusRecordCustomerForm_Click(object sender, EventArgs e)
+        {
+            if (whichrec > 0)
+            {
+                whichrec--;
+                MoveRecords();
+            }
         }
     }
     

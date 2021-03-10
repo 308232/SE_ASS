@@ -41,9 +41,9 @@ namespace SE_ASS
             txtboxStreetName.Text = OneRecord[3].ToString();
             txtboxPostCode.Text = OneRecord[4].ToString();
             txtboxPhoneNumber.Text = OneRecord[5].ToString();
-            txtboxEmail.Text = OneRecord[5].ToString();
-            txtboxNotes.Text = OneRecord[6].ToString();
-            txtboxAssId.Text = OneRecord[7].ToString();
+            txtboxEmail.Text = OneRecord[6].ToString();
+            txtboxNotes.Text = OneRecord[7].ToString();
+            txtboxAssId.Text = OneRecord[8].ToString();
            
         }
 

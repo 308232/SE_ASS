@@ -28,8 +28,10 @@ namespace SE_ASS
                 userRights = "Owner";
 
                 MainForm MainForm = new MainForm();
+                
                 this.Hide();
                 MainForm.Show();
+            
             }
             else if ((txtUserName.Text == "Admin") && (txtPassword.Text == "asd"))
             {
@@ -65,6 +67,11 @@ namespace SE_ASS
 
 
 
+
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

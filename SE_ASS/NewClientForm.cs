@@ -44,7 +44,8 @@ namespace SE_ASS
             txtboxEmail.Text = OneRecord[6].ToString();
             txtboxNotes.Text = OneRecord[7].ToString();
             txtboxAssId.Text = OneRecord[8].ToString();
-           
+            txtboxContracted.Text = OneRecord[9].ToString();
+
         }
 
         private void NewClientForm_Load(object sender, EventArgs e)
@@ -111,8 +112,9 @@ namespace SE_ASS
             OneRecord[6] = txtboxEmail.Text;
             OneRecord[7] = txtboxNotes.Text;
             OneRecord[8] = txtboxAssId.Text;
+            OneRecord[9] = txtboxContracted.Text;
 
-          
+
 
 
             dsCustomer.Tables["Customers"].Rows.Add(OneRecord);
@@ -138,7 +140,7 @@ namespace SE_ASS
             txtboxEmail.Clear();
             txtboxNotes.Clear();
             txtboxAssId.Clear();
-            
+            txtboxContracted.Clear();
         }
 
         private void label3_Click(object sender, EventArgs e)

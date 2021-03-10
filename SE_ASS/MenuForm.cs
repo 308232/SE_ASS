@@ -27,19 +27,18 @@ namespace SE_ASS
             {
                 userRights = "Owner";
 
-                MainForm MainForm = new MainForm();
-                
+                AdminForm AdminForm = new AdminForm();
                 this.Hide();
-                MainForm.Show();
-            
+                AdminForm.Show();
+
             }
             else if ((txtUserName.Text == "Admin") && (txtPassword.Text == "asd"))
             {
                 userRights = "Admin";
 
-                AdminForm AdminForm = new AdminForm();
+                MainForm MainForm = new MainForm();
                 this.Hide();
-                AdminForm.Show();
+                MainForm.Show();
             }
             else if ((txtUserName.Text == "LC") && (txtPassword.Text == "as"))
             {

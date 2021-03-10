@@ -54,6 +54,8 @@ namespace SE_ASS
             this.btnAddNewClient = new System.Windows.Forms.Button();
             this.btnPreviusRecord = new System.Windows.Forms.Button();
             this.btnLastRecord = new System.Windows.Forms.Button();
+            this.txtboxContracted = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -290,12 +292,30 @@ namespace SE_ASS
             this.btnLastRecord.UseVisualStyleBackColor = false;
             this.btnLastRecord.Click += new System.EventHandler(this.btnLastRecord_Click);
             // 
+            // txtboxContracted
+            // 
+            this.txtboxContracted.Location = new System.Drawing.Point(208, 490);
+            this.txtboxContracted.Name = "txtboxContracted";
+            this.txtboxContracted.Size = new System.Drawing.Size(100, 20);
+            this.txtboxContracted.TabIndex = 26;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(63, 496);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Contracted ";
+            // 
             // NewClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(919, 566);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtboxContracted);
             this.Controls.Add(this.btnLastRecord);
             this.Controls.Add(this.btnPreviusRecord);
             this.Controls.Add(this.btnAddNewClient);
@@ -356,5 +376,7 @@ namespace SE_ASS
         private System.Windows.Forms.Button btnAddNewClient;
         private System.Windows.Forms.Button btnPreviusRecord;
         private System.Windows.Forms.Button btnLastRecord;
+        private System.Windows.Forms.TextBox txtboxContracted;
+        private System.Windows.Forms.Label label11;
     }
 }

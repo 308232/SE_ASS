@@ -51,8 +51,7 @@ namespace SE_ASS
             this.btnFirstRecordClientsForm = new System.Windows.Forms.Button();
             this.btnNextRecordClientsForm = new System.Windows.Forms.Button();
             this.btnSaveNewClientRecord = new System.Windows.Forms.Button();
-            this.btnAddNewClient = new System.Windows.Forms.Button();
-            this.btnEditRecordCustomerForm = new System.Windows.Forms.Button();
+            this.btnAddNewClient = new System.Windows.Forms.Button()
             this.SuspendLayout();
             // 
             // label1
@@ -222,7 +221,7 @@ namespace SE_ASS
             // btnFirstRecordClientsForm
             // 
             this.btnFirstRecordClientsForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnFirstRecordClientsForm.Location = new System.Drawing.Point(446, 114);
+            this.btnFirstRecordClientsForm.Location = new System.Drawing.Point(403, 114);
             this.btnFirstRecordClientsForm.Name = "btnFirstRecordClientsForm";
             this.btnFirstRecordClientsForm.Size = new System.Drawing.Size(95, 43);
             this.btnFirstRecordClientsForm.TabIndex = 20;
@@ -233,7 +232,7 @@ namespace SE_ASS
             // btnNextRecordClientsForm
             // 
             this.btnNextRecordClientsForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNextRecordClientsForm.Location = new System.Drawing.Point(446, 184);
+            this.btnNextRecordClientsForm.Location = new System.Drawing.Point(403, 194);
             this.btnNextRecordClientsForm.Name = "btnNextRecordClientsForm";
             this.btnNextRecordClientsForm.Size = new System.Drawing.Size(95, 45);
             this.btnNextRecordClientsForm.TabIndex = 21;
@@ -263,15 +262,7 @@ namespace SE_ASS
             this.btnAddNewClient.UseVisualStyleBackColor = false;
             this.btnAddNewClient.Click += new System.EventHandler(this.btnAddNewClient_Click);
             // 
-            // btnEditRecordCustomerForm
-            // 
-            this.btnEditRecordCustomerForm.Location = new System.Drawing.Point(659, 244);
-            this.btnEditRecordCustomerForm.Name = "btnEditRecordCustomerForm";
-            this.btnEditRecordCustomerForm.Size = new System.Drawing.Size(97, 67);
-            this.btnEditRecordCustomerForm.TabIndex = 24;
-            this.btnEditRecordCustomerForm.Text = "EDIT RECORD";
-            this.btnEditRecordCustomerForm.UseVisualStyleBackColor = true;
-            this.btnEditRecordCustomerForm.Click += new System.EventHandler(this.btnEditRecordCustomerForm_Click);
+
             // 
             // NewClientForm
             // 
@@ -279,7 +270,7 @@ namespace SE_ASS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(919, 566);
-            this.Controls.Add(this.btnEditRecordCustomerForm);
+
             this.Controls.Add(this.btnAddNewClient);
             this.Controls.Add(this.btnSaveNewClientRecord);
             this.Controls.Add(this.btnNextRecordClientsForm);
@@ -336,6 +327,6 @@ namespace SE_ASS
         private System.Windows.Forms.Button btnNextRecordClientsForm;
         private System.Windows.Forms.Button btnSaveNewClientRecord;
         private System.Windows.Forms.Button btnAddNewClient;
-        private System.Windows.Forms.Button btnEditRecordCustomerForm;
+
     }
 }

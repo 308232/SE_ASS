@@ -165,6 +165,22 @@ namespace SE_ASS
         {
             Application.Exit();
         }
+
+        private void btnLastRecord_Click(object sender, EventArgs e)
+        {
+            whichrec = countrec - 1;
+            MoveRecords();
+        }
+
+        private void btnPreviusRecord_Click(object sender, EventArgs e)
+        {
+
+            if (whichrec > 0)
+            {
+                whichrec--;
+                MoveRecords();
+            }
+        }
     }
     
 }

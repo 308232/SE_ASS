@@ -52,7 +52,8 @@ namespace SE_ASS
             this.btnNextRecordClientsForm = new System.Windows.Forms.Button();
             this.btnSaveNewClientRecord = new System.Windows.Forms.Button();
             this.btnAddNewClient = new System.Windows.Forms.Button();
-
+            this.btnPreviusRecord = new System.Windows.Forms.Button();
+            this.btnLastRecord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -263,7 +264,25 @@ namespace SE_ASS
             this.btnAddNewClient.UseVisualStyleBackColor = false;
             this.btnAddNewClient.Click += new System.EventHandler(this.btnAddNewClient_Click);
             // 
-           
+            // btnPreviusRecord
+            // 
+            this.btnPreviusRecord.Location = new System.Drawing.Point(515, 204);
+            this.btnPreviusRecord.Name = "btnPreviusRecord";
+            this.btnPreviusRecord.Size = new System.Drawing.Size(95, 35);
+            this.btnPreviusRecord.TabIndex = 24;
+            this.btnPreviusRecord.Text = "Previus Record";
+            this.btnPreviusRecord.UseVisualStyleBackColor = true;
+            this.btnPreviusRecord.Click += new System.EventHandler(this.btnPreviusRecord_Click);
+            // 
+            // btnLastRecord
+            // 
+            this.btnLastRecord.Location = new System.Drawing.Point(524, 129);
+            this.btnLastRecord.Name = "btnLastRecord";
+            this.btnLastRecord.Size = new System.Drawing.Size(95, 35);
+            this.btnLastRecord.TabIndex = 25;
+            this.btnLastRecord.Text = "LAST RECORD";
+            this.btnLastRecord.UseVisualStyleBackColor = true;
+            this.btnLastRecord.Click += new System.EventHandler(this.btnLastRecord_Click);
             // 
             // NewClientForm
             // 
@@ -271,7 +290,8 @@ namespace SE_ASS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(919, 566);
-
+            this.Controls.Add(this.btnLastRecord);
+            this.Controls.Add(this.btnPreviusRecord);
             this.Controls.Add(this.btnAddNewClient);
             this.Controls.Add(this.btnSaveNewClientRecord);
             this.Controls.Add(this.btnNextRecordClientsForm);
@@ -328,6 +348,7 @@ namespace SE_ASS
         private System.Windows.Forms.Button btnNextRecordClientsForm;
         private System.Windows.Forms.Button btnSaveNewClientRecord;
         private System.Windows.Forms.Button btnAddNewClient;
-       
+        private System.Windows.Forms.Button btnPreviusRecord;
+        private System.Windows.Forms.Button btnLastRecord;
     }
 }

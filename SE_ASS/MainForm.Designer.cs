@@ -61,7 +61,7 @@ namespace SE_ASS
             // 
             // btnShowAllAssForACourierForADAY
             // 
-            this.btnShowAllAssForACourierForADAY.Location = new System.Drawing.Point(505, 139);
+            this.btnShowAllAssForACourierForADAY.Location = new System.Drawing.Point(361, 118);
             this.btnShowAllAssForACourierForADAY.Name = "btnShowAllAssForACourierForADAY";
             this.btnShowAllAssForACourierForADAY.Size = new System.Drawing.Size(117, 80);
             this.btnShowAllAssForACourierForADAY.TabIndex = 2;

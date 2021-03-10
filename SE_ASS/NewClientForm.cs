@@ -146,7 +146,20 @@ namespace SE_ASS
 
         }
 
+        private void btnLastRecordClientsForm_Click(object sender, EventArgs e)
+        {
+            whichrec = countrec - 1;
+            MoveRecords();
+        }
 
+        private void btnPreviusRecordClientsForm_Click(object sender, EventArgs e)
+        {
+            if (whichrec > 0)
+            {
+                whichrec--;
+                MoveRecords();
+            }
+        }
     }
     
 }

@@ -157,21 +157,7 @@ namespace SE_ASS
 
             
 
-            //Create the SelectCommand of the DataAdatper
-            SqlCommand cmClient = new SqlCommand();
-            cmClient.Connection = newCon;
-            cmClient.CommandType = CommandType.Text;
-            cmClient.CommandText = "UPDATE ClientsTbl SET BusinessName='" + txtboxBusinessName.Text + "', HouseNo='" + txtboxHouseNo.Text + "',StreetName='" + txtboxStreetName.Text + "', PostCode='" + txtboxPostCode.Text + "', PhoneNumber='" + txtboxPhoneNumber.Text + "', Email='" + txtboxEmail.Text + "', Notes='" + txtboxNotes.Text + "' WHERE ClientID=" + txtboxClientID.Text + " , newCon ";
-            SqlDataAdapter daClient = new SqlDataAdapter(cmClient);
-
-            //Use the sqlCommandBuilder to generate the UpdateCommand
-          
-           
-
-            //Update the database
-            System.Data.SqlClient.SqlCommandBuilder myUpdateDB;
-            myUpdateDB = new System.Data.SqlClient.SqlCommandBuilder(daCustomer);
-            myUpdateDB.DataAdapter.Update(dsCustomer.Tables["Customers"]);
+            
 
         }
 

@@ -223,9 +223,10 @@ namespace SE_ASS
             // btnFirstRecordClientsForm
             // 
             this.btnFirstRecordClientsForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnFirstRecordClientsForm.Location = new System.Drawing.Point(403, 114);
+            this.btnFirstRecordClientsForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirstRecordClientsForm.Location = new System.Drawing.Point(366, 95);
             this.btnFirstRecordClientsForm.Name = "btnFirstRecordClientsForm";
-            this.btnFirstRecordClientsForm.Size = new System.Drawing.Size(95, 43);
+            this.btnFirstRecordClientsForm.Size = new System.Drawing.Size(119, 62);
             this.btnFirstRecordClientsForm.TabIndex = 20;
             this.btnFirstRecordClientsForm.Text = "FIRST RECORD";
             this.btnFirstRecordClientsForm.UseVisualStyleBackColor = false;
@@ -234,9 +235,10 @@ namespace SE_ASS
             // btnNextRecordClientsForm
             // 
             this.btnNextRecordClientsForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNextRecordClientsForm.Location = new System.Drawing.Point(403, 194);
+            this.btnNextRecordClientsForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextRecordClientsForm.Location = new System.Drawing.Point(366, 175);
             this.btnNextRecordClientsForm.Name = "btnNextRecordClientsForm";
-            this.btnNextRecordClientsForm.Size = new System.Drawing.Size(95, 45);
+            this.btnNextRecordClientsForm.Size = new System.Drawing.Size(119, 64);
             this.btnNextRecordClientsForm.TabIndex = 21;
             this.btnNextRecordClientsForm.Text = "NEXT RECORD";
             this.btnNextRecordClientsForm.UseVisualStyleBackColor = false;
@@ -266,22 +268,26 @@ namespace SE_ASS
             // 
             // btnPreviusRecord
             // 
-            this.btnPreviusRecord.Location = new System.Drawing.Point(515, 204);
+            this.btnPreviusRecord.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPreviusRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreviusRecord.Location = new System.Drawing.Point(491, 175);
             this.btnPreviusRecord.Name = "btnPreviusRecord";
-            this.btnPreviusRecord.Size = new System.Drawing.Size(95, 35);
+            this.btnPreviusRecord.Size = new System.Drawing.Size(119, 64);
             this.btnPreviusRecord.TabIndex = 24;
-            this.btnPreviusRecord.Text = "Previus Record";
-            this.btnPreviusRecord.UseVisualStyleBackColor = true;
+            this.btnPreviusRecord.Text = "Previous Record";
+            this.btnPreviusRecord.UseVisualStyleBackColor = false;
             this.btnPreviusRecord.Click += new System.EventHandler(this.btnPreviusRecord_Click);
             // 
             // btnLastRecord
             // 
-            this.btnLastRecord.Location = new System.Drawing.Point(524, 129);
+            this.btnLastRecord.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLastRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLastRecord.Location = new System.Drawing.Point(491, 95);
             this.btnLastRecord.Name = "btnLastRecord";
-            this.btnLastRecord.Size = new System.Drawing.Size(95, 35);
+            this.btnLastRecord.Size = new System.Drawing.Size(119, 62);
             this.btnLastRecord.TabIndex = 25;
             this.btnLastRecord.Text = "LAST RECORD";
-            this.btnLastRecord.UseVisualStyleBackColor = true;
+            this.btnLastRecord.UseVisualStyleBackColor = false;
             this.btnLastRecord.Click += new System.EventHandler(this.btnLastRecord_Click);
             // 
             // NewClientForm

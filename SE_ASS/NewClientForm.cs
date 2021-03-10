@@ -41,9 +41,9 @@ namespace SE_ASS
             txtboxStreetName.Text = OneRecord[3].ToString();
             txtboxPostCode.Text = OneRecord[4].ToString();
             txtboxPhoneNumber.Text = OneRecord[5].ToString();
-            txtboxEmail.Text = OneRecord[5].ToString();
-            txtboxNotes.Text = OneRecord[6].ToString();
-            txtboxAssId.Text = OneRecord[7].ToString();
+            txtboxEmail.Text = OneRecord[6].ToString();
+            txtboxNotes.Text = OneRecord[7].ToString();
+            txtboxAssId.Text = OneRecord[8].ToString();
            
         }
 
@@ -73,7 +73,7 @@ namespace SE_ASS
             }
             catch
             {
-                MessageBox.Show("Noooo");
+                MessageBox.Show("Yess");
 
             }
             newCon.Close();
@@ -140,6 +140,38 @@ namespace SE_ASS
         {
 
         }
+
+        private void btnEditRecordCustomerForm_Click(object sender, EventArgs e)
+        {
+            newCon = new System.Data.SqlClient.SqlConnection();
+            newCon.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Mitko Bozhilov\\Work Year 6\\Software Eng\\Ass\\MyDataBase\\MyDataBase\\BookingSystemDataBase.mdf;Integrated Security=True; Connect Timeout=30";
+
+            dsCustomer = new DataSet();
+            //a private string to pass the data from the database to. 
+            String sqlGetWhat;
+            //in order to read the dataabse sql code is used as shown below 
+            sqlGetWhat = "UPDATE ClientsTbl SET BusinessName='"+txtboxBusinessName.Text+"', HouseNo='"+txtboxHouseNo.Text+"', StreetName='"+txtboxStreetName.Text+"', PostCode='"+txtboxPostCode.Text+"', PhoneNumber='"+txtboxPhoneNumber.Text+"', Email='"+txtboxEmail.Text+"', Notes='"+txtboxNotes.Text+"', AssID='"+txtboxAssId.Text+"' WHERE ClientID="+txtboxClientID.Text+", newCon";
+
+            try
+            {
+                //open the database connection 
+                newCon.Open();
+                //setting the data adapter and filling it with the information 
+                daCustomer = new System.Data.SqlClient.SqlDataAdapter(sqlGetWhat, newCon);
+                daCustomer.Update(dsCustomer, "Customers");
+
+               
+                
+
+            }
+            catch
+            {
+                MessageBox.Show("Yess");
+
+            }
+            newCon.Close();
+        
+    }
     }
     
 }

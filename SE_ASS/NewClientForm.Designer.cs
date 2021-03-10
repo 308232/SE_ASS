@@ -52,6 +52,7 @@ namespace SE_ASS
             this.btnNextRecordClientsForm = new System.Windows.Forms.Button();
             this.btnSaveNewClientRecord = new System.Windows.Forms.Button();
             this.btnAddNewClient = new System.Windows.Forms.Button();
+            this.btnEditRecordCustomerForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -262,12 +263,23 @@ namespace SE_ASS
             this.btnAddNewClient.UseVisualStyleBackColor = false;
             this.btnAddNewClient.Click += new System.EventHandler(this.btnAddNewClient_Click);
             // 
+            // btnEditRecordCustomerForm
+            // 
+            this.btnEditRecordCustomerForm.Location = new System.Drawing.Point(659, 244);
+            this.btnEditRecordCustomerForm.Name = "btnEditRecordCustomerForm";
+            this.btnEditRecordCustomerForm.Size = new System.Drawing.Size(97, 67);
+            this.btnEditRecordCustomerForm.TabIndex = 24;
+            this.btnEditRecordCustomerForm.Text = "EDIT RECORD";
+            this.btnEditRecordCustomerForm.UseVisualStyleBackColor = true;
+            this.btnEditRecordCustomerForm.Click += new System.EventHandler(this.btnEditRecordCustomerForm_Click);
+            // 
             // NewClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(919, 566);
+            this.Controls.Add(this.btnEditRecordCustomerForm);
             this.Controls.Add(this.btnAddNewClient);
             this.Controls.Add(this.btnSaveNewClientRecord);
             this.Controls.Add(this.btnNextRecordClientsForm);
@@ -324,5 +336,6 @@ namespace SE_ASS
         private System.Windows.Forms.Button btnNextRecordClientsForm;
         private System.Windows.Forms.Button btnSaveNewClientRecord;
         private System.Windows.Forms.Button btnAddNewClient;
+        private System.Windows.Forms.Button btnEditRecordCustomerForm;
     }
 }

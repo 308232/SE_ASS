@@ -27,9 +27,18 @@ namespace SE_ASS
             {
                 userRights = "Owner";
 
-                AdminForm AdminForm = new AdminForm();
+                MainForm MainForm = new MainForm();
+                MainForm.btnAllCAss.Visible = false;
+                MainForm.label4.Visible = false;
+                MainForm.label5.Visible = false;
+                MainForm.label6.Visible = false;
+                MainForm.txtboxCourierID.Visible = false;
+                MainForm.txtboxCourierdate.Visible = false;
+                MainForm.lblTitle.Text = "WELCOME OWNER";
+
+
                 this.Hide();
-                AdminForm.Show();
+               MainForm.Show();
 
             }
             else if ((txtUserName.Text == "Admin") && (txtPassword.Text == "asd"))
@@ -37,6 +46,7 @@ namespace SE_ASS
                 userRights = "Admin";
 
                 MainForm MainForm = new MainForm();
+                
                 this.Hide();
                 MainForm.Show();
             }

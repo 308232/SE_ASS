@@ -46,6 +46,7 @@ namespace SE_ASS
             this.txtboxCourierdate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdmin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,12 +227,23 @@ namespace SE_ASS
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(36, 389);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 17;
+            this.btnBack.Text = "BACK";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(934, 450);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtboxCourierdate);
@@ -258,8 +270,6 @@ namespace SE_ASS
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnCreateNewClientContract;
         private System.Windows.Forms.Button btnShowAllAssForACourierForADAY;
         private System.Windows.Forms.DataGridView dataGridViewAdmin;
@@ -269,12 +279,14 @@ namespace SE_ASS
         private System.Windows.Forms.TextBox txtboxEndDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnAllCAss;
-        private System.Windows.Forms.TextBox txtboxCourierID;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtboxCourierdate;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnAllCAss;
+        public System.Windows.Forms.TextBox txtboxCourierID;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.TextBox txtboxCourierdate;
+        private System.Windows.Forms.Button btnBack;
     }
 }

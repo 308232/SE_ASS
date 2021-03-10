@@ -51,10 +51,7 @@ namespace SE_ASS
             this.btnFirstRecordClientsForm = new System.Windows.Forms.Button();
             this.btnNextRecordClientsForm = new System.Windows.Forms.Button();
             this.btnSaveNewClientRecord = new System.Windows.Forms.Button();
-            this.btnAddNewClient = new System.Windows.Forms.Button();
-            this.btnEditRecordClientsForm = new System.Windows.Forms.Button();
-            this.btnLastRecordClientsForm = new System.Windows.Forms.Button();
-            this.btnPreviusRecordCustomerForm = new System.Windows.Forms.Button();
+            this.btnAddNewClient = new System.Windows.Forms.Button()
             this.SuspendLayout();
             // 
             // label1
@@ -265,35 +262,7 @@ namespace SE_ASS
             this.btnAddNewClient.UseVisualStyleBackColor = false;
             this.btnAddNewClient.Click += new System.EventHandler(this.btnAddNewClient_Click);
             // 
-            // btnEditRecordClientsForm
-            // 
-            this.btnEditRecordClientsForm.Location = new System.Drawing.Point(659, 287);
-            this.btnEditRecordClientsForm.Name = "btnEditRecordClientsForm";
-            this.btnEditRecordClientsForm.Size = new System.Drawing.Size(117, 65);
-            this.btnEditRecordClientsForm.TabIndex = 24;
-            this.btnEditRecordClientsForm.Text = "EDIT RECORD";
-            this.btnEditRecordClientsForm.UseVisualStyleBackColor = true;
-            this.btnEditRecordClientsForm.Click += new System.EventHandler(this.btnEditRecordClientsForm_Click);
-            // 
-            // btnLastRecordClientsForm
-            // 
-            this.btnLastRecordClientsForm.Location = new System.Drawing.Point(504, 114);
-            this.btnLastRecordClientsForm.Name = "btnLastRecordClientsForm";
-            this.btnLastRecordClientsForm.Size = new System.Drawing.Size(121, 43);
-            this.btnLastRecordClientsForm.TabIndex = 25;
-            this.btnLastRecordClientsForm.Text = "LAST RECORD";
-            this.btnLastRecordClientsForm.UseVisualStyleBackColor = true;
-            this.btnLastRecordClientsForm.Click += new System.EventHandler(this.btnLastRecordClientsForm_Click);
-            // 
-            // btnPreviusRecordCustomerForm
-            // 
-            this.btnPreviusRecordCustomerForm.Location = new System.Drawing.Point(504, 205);
-            this.btnPreviusRecordCustomerForm.Name = "btnPreviusRecordCustomerForm";
-            this.btnPreviusRecordCustomerForm.Size = new System.Drawing.Size(121, 34);
-            this.btnPreviusRecordCustomerForm.TabIndex = 26;
-            this.btnPreviusRecordCustomerForm.Text = "PREVIUS RECORD";
-            this.btnPreviusRecordCustomerForm.UseVisualStyleBackColor = true;
-            this.btnPreviusRecordCustomerForm.Click += new System.EventHandler(this.btnPreviusRecordCustomerForm_Click);
+
             // 
             // NewClientForm
             // 
@@ -301,9 +270,7 @@ namespace SE_ASS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(919, 566);
-            this.Controls.Add(this.btnPreviusRecordCustomerForm);
-            this.Controls.Add(this.btnLastRecordClientsForm);
-            this.Controls.Add(this.btnEditRecordClientsForm);
+
             this.Controls.Add(this.btnAddNewClient);
             this.Controls.Add(this.btnSaveNewClientRecord);
             this.Controls.Add(this.btnNextRecordClientsForm);
@@ -360,8 +327,6 @@ namespace SE_ASS
         private System.Windows.Forms.Button btnNextRecordClientsForm;
         private System.Windows.Forms.Button btnSaveNewClientRecord;
         private System.Windows.Forms.Button btnAddNewClient;
-        private System.Windows.Forms.Button btnEditRecordClientsForm;
-        private System.Windows.Forms.Button btnLastRecordClientsForm;
-        private System.Windows.Forms.Button btnPreviusRecordCustomerForm;
+
     }
 }

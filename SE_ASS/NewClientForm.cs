@@ -78,7 +78,7 @@ namespace SE_ASS
             }
             catch
             {
-                MessageBox.Show("Noooo");
+                MessageBox.Show("Yess");
 
             }
             newCon.Close();
@@ -146,35 +146,7 @@ namespace SE_ASS
 
         }
 
-        private void btnEditRecordClientsForm_Click(object sender, EventArgs e)
-        {
-            
-            String sqlGetWhatt;
-            //in order to read the dataabse sql code is used as shown below 
-            sqlGetWhatt = "UPDATE ClientsTbl SET BusinessName='" + txtboxBusinessName.Text + "', HouseNo='" + txtboxHouseNo.Text + "',StreetName='" + txtboxStreetName.Text + "', PostCode='" + txtboxPostCode.Text + "', PhoneNumber='" + txtboxPhoneNumber.Text + "', Email='" + txtboxEmail.Text + "', Notes='" + txtboxNotes.Text + "' WHERE ClientID=" + txtboxClientID.Text + " , newCon ";
 
-            
-
-            
-
-            
-
-        }
-
-        private void btnLastRecordClientsForm_Click(object sender, EventArgs e)
-        {
-            whichrec = countrec - 1;
-            MoveRecords();
-        }
-
-        private void btnPreviusRecordCustomerForm_Click(object sender, EventArgs e)
-        {
-            if (whichrec > 0)
-            {
-                whichrec--;
-                MoveRecords();
-            }
-        }
     }
     
 }

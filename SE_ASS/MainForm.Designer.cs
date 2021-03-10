@@ -41,12 +41,13 @@ namespace SE_ASS
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(287, 44);
+            this.lblTitle.Location = new System.Drawing.Point(375, 18);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(157, 36);
+            this.lblTitle.Size = new System.Drawing.Size(266, 36);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "WELCOME";
+            this.lblTitle.Text = "WELCOME ADMIN";
             // 
             // btnCreateNewClientContract
             // 

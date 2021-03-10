@@ -64,7 +64,7 @@ namespace SE_ASS
             this.btnShowAllAssForACourierForADAY.Name = "btnShowAllAssForACourierForADAY";
             this.btnShowAllAssForACourierForADAY.Size = new System.Drawing.Size(117, 80);
             this.btnShowAllAssForACourierForADAY.TabIndex = 2;
-            this.btnShowAllAssForACourierForADAY.Text = "Show All Ass for a courier";
+            this.btnShowAllAssForACourierForADAY.Text = "Show All Ass for a choosen day ";
             this.btnShowAllAssForACourierForADAY.UseVisualStyleBackColor = true;
             this.btnShowAllAssForACourierForADAY.Click += new System.EventHandler(this.btnShowAllAssForACourierForADAY_Click);
             // 

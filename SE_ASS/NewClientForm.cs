@@ -183,6 +183,13 @@ namespace SE_ASS
                 MoveRecords();
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MainForm MainForm = new MainForm();
+            this.Hide();
+            MainForm.Show();
+        }
     }
     
 }

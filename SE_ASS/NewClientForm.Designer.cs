@@ -56,6 +56,7 @@ namespace SE_ASS
             this.btnLastRecord = new System.Windows.Forms.Button();
             this.txtboxContracted = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -302,11 +303,22 @@ namespace SE_ASS
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(63, 496);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(59, 490);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.Size = new System.Drawing.Size(103, 20);
             this.label11.TabIndex = 27;
             this.label11.Text = "Contracted ";
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(580, 416);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(112, 48);
+            this.btnBack.TabIndex = 28;
+            this.btnBack.Text = "BACK";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // NewClientForm
             // 
@@ -314,6 +326,7 @@ namespace SE_ASS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(919, 566);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtboxContracted);
             this.Controls.Add(this.btnLastRecord);
@@ -378,5 +391,6 @@ namespace SE_ASS
         private System.Windows.Forms.Button btnLastRecord;
         private System.Windows.Forms.TextBox txtboxContracted;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -54,6 +54,7 @@ namespace SE_ASS
             this.btnAddNewClient = new System.Windows.Forms.Button();
             this.btnLastRecordClientsForm = new System.Windows.Forms.Button();
             this.btnPreviusRecordClientsForm = new System.Windows.Forms.Button();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -284,12 +285,23 @@ namespace SE_ASS
             this.btnPreviusRecordClientsForm.UseVisualStyleBackColor = true;
             this.btnPreviusRecordClientsForm.Click += new System.EventHandler(this.btnPreviusRecordClientsForm_Click);
             // 
+            // btnQuit
+            // 
+            this.btnQuit.Location = new System.Drawing.Point(809, 505);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(75, 23);
+            this.btnQuit.TabIndex = 26;
+            this.btnQuit.Text = "QUIT";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
             // NewClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(919, 566);
+            this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnPreviusRecordClientsForm);
             this.Controls.Add(this.btnLastRecordClientsForm);
             this.Controls.Add(this.btnAddNewClient);
@@ -350,5 +362,6 @@ namespace SE_ASS
         private System.Windows.Forms.Button btnAddNewClient;
         private System.Windows.Forms.Button btnLastRecordClientsForm;
         private System.Windows.Forms.Button btnPreviusRecordClientsForm;
+        private System.Windows.Forms.Button btnQuit;
     }
 }

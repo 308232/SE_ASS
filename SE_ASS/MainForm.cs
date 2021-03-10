@@ -147,5 +147,12 @@ namespace SE_ASS
             }
             newCon.Close();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MenuForm MenuForm = new MenuForm();
+            this.Hide();
+            MenuForm.Show();
+        }
     }
 }

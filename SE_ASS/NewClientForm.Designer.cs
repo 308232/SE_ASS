@@ -51,7 +51,7 @@ namespace SE_ASS
             this.btnFirstRecordClientsForm = new System.Windows.Forms.Button();
             this.btnNextRecordClientsForm = new System.Windows.Forms.Button();
             this.btnSaveNewClientRecord = new System.Windows.Forms.Button();
-            this.btnAddNewClient = new System.Windows.Forms.Button()
+            this.btnAddNewClient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1

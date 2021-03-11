@@ -55,9 +55,11 @@ namespace SE_ASS
             {
                 userRights = "LC";
 
-               LcForm LcForm = new LcForm();
+               MainForm MainForm = new MainForm();
                 this.Hide();
-                LcForm.Show();
+                MainForm.Show();
+                MainForm.lblTitle.Text = "WELCOME LC";
+                MainForm.button1.Visible = false;
             }
             else if ((txtUserName.Text == "Couriers") && (txtPassword.Text == "a"))
             {

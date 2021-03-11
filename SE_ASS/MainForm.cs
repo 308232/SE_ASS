@@ -54,6 +54,20 @@ namespace SE_ASS
                 this.Hide();
                 NewClientForm.Show();
             }
+            else if (lblTitle.Text == "WELCOME LC")
+            {
+                NewClientForm NewClientForm = new NewClientForm();
+                NewClientForm.btnBack.Visible = false;
+                NewClientForm.btnBackLC.Visible = true;
+                NewClientForm.btnBackOwner.Visible = false;
+                NewClientForm.btnAddNewClient.Visible = false;
+                NewClientForm.btnSaveNewClientRecord.Visible = false;
+                NewClientForm.btnEDIT.Visible = true;
+                NewClientForm.btnUPDATE.Visible = false;
+              
+                this.Hide();
+                NewClientForm.Show();
+            }
         }
 
         private void btnShowAllAssForACourierForADAY_Click(object sender, EventArgs e)
@@ -180,9 +194,22 @@ namespace SE_ASS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DeliveriesForm DeliveriesForm = new DeliveriesForm();
-            this.Hide();
-            DeliveriesForm.Show();
+            if (lblTitle.Text == "WELCOME ADMIN")
+            {
+                DeliveriesForm DeliveriesForm = new DeliveriesForm();
+                this.Hide();
+                DeliveriesForm.Show();
+                DeliveriesForm.label1.Text = "ADMIN DELIVERIES";
+                DeliveriesForm.btnBackLCDeliveries.Visible = false;
+            }
+            else if(lblTitle.Text=="WELCOME LC")
+            {
+                DeliveriesForm DeliveriesForm = new DeliveriesForm();
+                this.Hide();
+                DeliveriesForm.Show();
+                DeliveriesForm.label1.Text = "LC DELIVERIES";
+                DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
+            }
         }
     }
 }

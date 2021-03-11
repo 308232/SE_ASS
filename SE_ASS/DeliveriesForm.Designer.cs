@@ -52,6 +52,7 @@ namespace SE_ASS
             this.btnBackdeliveriesAdmin = new System.Windows.Forms.Button();
             this.btnCancelAdd = new System.Windows.Forms.Button();
             this.btnBackLCDeliveries = new System.Windows.Forms.Button();
+            this.btnDeleteDeliverie = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -256,11 +257,22 @@ namespace SE_ASS
             this.btnBackLCDeliveries.UseVisualStyleBackColor = true;
             this.btnBackLCDeliveries.Click += new System.EventHandler(this.btnBackLCDeliveries_Click);
             // 
+            // btnDeleteDeliverie
+            // 
+            this.btnDeleteDeliverie.Location = new System.Drawing.Point(665, 81);
+            this.btnDeleteDeliverie.Name = "btnDeleteDeliverie";
+            this.btnDeleteDeliverie.Size = new System.Drawing.Size(75, 55);
+            this.btnDeleteDeliverie.TabIndex = 23;
+            this.btnDeleteDeliverie.Text = "DELETE DELIVERY";
+            this.btnDeleteDeliverie.UseVisualStyleBackColor = true;
+            this.btnDeleteDeliverie.Click += new System.EventHandler(this.btnDeleteDeliverie_Click);
+            // 
             // DeliveriesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeleteDeliverie);
             this.Controls.Add(this.btnBackLCDeliveries);
             this.Controls.Add(this.btnCancelAdd);
             this.Controls.Add(this.btnBackdeliveriesAdmin);
@@ -316,5 +328,6 @@ namespace SE_ASS
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button btnBackLCDeliveries;
         public System.Windows.Forms.Button btnBackdeliveriesAdmin;
+        private System.Windows.Forms.Button btnDeleteDeliverie;
     }
 }

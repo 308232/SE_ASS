@@ -257,5 +257,76 @@ namespace SE_ASS
             MainForm.lblTitle.Text = "WELCOME LC";
             MainForm.button1.Visible = false;
         }
+
+        private void btnDeleteDeliverie_Click(object sender, EventArgs e)
+        {
+
+
+            dsCustomer = new DataSet();
+
+
+            //a private string to pass the data from the database to. 
+
+            //in order to read the dataabse sql code is used as shown below 
+
+            String Update = "DELETE FROM DeliveriesTbl WHERE DeliveriesID='"+txtboxDeliverieID.Text+"'";
+
+            SqlConnection conn = new SqlConnection(newCon.ConnectionString);
+            SqlCommand cmd = new SqlCommand(Update, conn);
+            SqlDataReader read;
+
+
+            try
+            {
+                //open the database connection 
+                conn.Open();
+                read = cmd.ExecuteReader();
+                MessageBox.Show("Record Deleted");
+
+
+
+
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Not able to Delete the record from the databse ");
+
+            }
+
+            conn.Close();
+
+            
+            if (label1.Text == "LC CLIENT FORM")
+            {
+                NewClientForm NewClientForm = new NewClientForm();
+                NewClientForm.btnBack.Visible = false;
+                NewClientForm.btnBackLC.Visible = true;
+                NewClientForm.btnBackOwner.Visible = false;
+                NewClientForm.btnAddNewClient.Visible = false;
+                NewClientForm.btnSaveNewClientRecord.Visible = false;
+                NewClientForm.btnEDIT.Visible = true;
+                NewClientForm.btnUPDATE.Visible = false;
+                NewClientForm.label1.Text = "LC CLIENT FORM";
+
+                this.Hide();
+                NewClientForm.Show();
+            }
+            else if (label1.Text == "ADMIN CLIENT FORM")
+            {
+                NewClientForm NewClientForm = new NewClientForm();
+                NewClientForm.btnBackLC.Visible = false;
+                NewClientForm.btnBackOwner.Visible = false;
+                NewClientForm.btnAddNewClient.Visible = true;
+                NewClientForm.btnSaveNewClientRecord.Visible = true;
+                NewClientForm.btnEDIT.Visible = true;
+                NewClientForm.btnUPDATE.Visible = false;
+                NewClientForm.label1.Text = "ADMIN CLIENT FORM";
+                this.Hide();
+                NewClientForm.Show();
+            }
+
+        }
     }
 }

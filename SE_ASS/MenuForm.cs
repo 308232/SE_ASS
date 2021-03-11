@@ -35,7 +35,7 @@ namespace SE_ASS
                 MainForm.txtboxCourierID.Visible = false;
                 MainForm.txtboxCourierdate.Visible = false;
                 MainForm.lblTitle.Text = "WELCOME OWNER";
-
+                MainForm.button2.Visible = false;
 
 
                 this.Hide();

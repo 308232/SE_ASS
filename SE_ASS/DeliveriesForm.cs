@@ -107,6 +107,7 @@ namespace SE_ASS
             txtboxContracted.Clear();
             btnRefresh.Visible = false;
             btnCancelAdd.Visible = true;
+            btnDeleteDeliverie.Visible = false;
 
         }
 
@@ -158,6 +159,8 @@ namespace SE_ASS
                 btnAddNewCourierJob.Visible = true;
                 btnRefresh.Visible = true;
                 btnCancelAdd.Visible = false;
+                btnSaveEditDeliveryLC.Visible = false;
+                btnEditLCDeliveries.Visible = false;
                 MessageBox.Show("New Record Has Been Added. Click on Refresh to refresh the DataBase");
             }
             else if(txtboxContracted.Text == "y" && label1.Text == "LC DELIVERIES")
@@ -188,6 +191,8 @@ namespace SE_ASS
                 btnAddNewCourierJob.Visible = true;
                 btnRefresh.Visible = true;
                 btnCancelAdd.Visible = false;
+                btnSaveEditDeliveryLC.Visible = true;
+                btnEditLCDeliveries.Visible = true;
                 MessageBox.Show("New Record Has Been Added. Click on Refresh to refresh the DataBase");
             }
             else
@@ -207,6 +212,9 @@ namespace SE_ASS
                 DeliveriesForm.label1.Text = "LC DELIVERIES";
                 DeliveriesForm.btnBackLCDeliveries.Visible = true;
                 DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = true;
+                DeliveriesForm.btnEditLCDeliveries.Visible = true;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
             }
             else if(label1.Text == "ADMIN DELIVERIES")
             {
@@ -216,6 +224,8 @@ namespace SE_ASS
                 DeliveriesForm.label1.Text = "ADMIN DELIVERIES";
                 DeliveriesForm.btnBackLCDeliveries.Visible = false;
                 DeliveriesForm.btnBackdeliveriesAdmin.Visible = true;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
+                DeliveriesForm.btnEditLCDeliveries.Visible = false;
             }
          }
 
@@ -237,6 +247,8 @@ namespace SE_ASS
                 DeliveriesForm.label1.Text = "LC DELIVERIES";
                 DeliveriesForm.btnBackLCDeliveries.Visible = true;
                 DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = true;
+                DeliveriesForm.btnBackLCDeliveries.Visible = true;
             }
             else if (label1.Text == "ADMIN DELIVERIES")
             {
@@ -246,6 +258,8 @@ namespace SE_ASS
                 DeliveriesForm.label1.Text = "ADMIN DELIVERIES";
                 DeliveriesForm.btnBackLCDeliveries.Visible = false;
                 DeliveriesForm.btnBackdeliveriesAdmin.Visible = true;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
+                DeliveriesForm.btnBackLCDeliveries.Visible = false;
             }
         }
 
@@ -327,6 +341,76 @@ namespace SE_ASS
                 NewClientForm.Show();
             }
 
+        }
+
+        private void btnEditLCDeliveries_Click(object sender, EventArgs e)
+        {
+            txtboxDeliverieID.Enabled = false;
+            btnNextRecordDeliveries.Visible = false;
+            btnPreviousRecordDeliveries.Visible = false;
+            btnDeleteDeliverie.Visible = false;
+            btnAddNewCourierJob.Visible = false;
+            btnSaveEditDeliveryLC.Visible = true;
+            btnEditLCDeliveries.Visible = false;
+
+
+
+
+        }
+
+        private void btnSaveEditDeliveryLC_Click(object sender, EventArgs e)
+        {
+
+
+
+            dsCustomer = new DataSet();
+
+
+            //a private string to pass the data from the database to. 
+
+            //in order to read the dataabse sql code is used as shown below 
+
+            String Update = "UPDATE DeliveriesTbl SET DeliveryHoursStart='"+txtboxDeliverieHourStart.Text+"', DeliveryHoursEnd='"+txtboxDeliveryHourEnd.Text+"', DeliveryDayStart='"+txtboxDeliverieDayStart.Text+"', DeliveryDayEnd='"+txtboxDeliverieDayEnd.Text+"', CourierID='"+txtboxCourierID.Text+"', Contracted='"+txtboxContracted.Text+"' WHERE DeliveriesID='"+txtboxDeliverieID.Text+"'";
+
+            SqlConnection conn = new SqlConnection(newCon.ConnectionString);
+            SqlCommand cmd = new SqlCommand(Update, conn);
+            SqlDataReader read;
+
+
+            try
+            {
+                //open the database connection 
+                conn.Open();
+                read = cmd.ExecuteReader();
+                MessageBox.Show("Record Updated");
+
+
+
+
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Not able to update the databse ");
+
+            }
+
+            conn.Close();
+
+            
+            if (label1.Text == "LC DELIVERIES")
+            {
+                DeliveriesForm DeliveriesForm = new DeliveriesForm();
+                this.Hide();
+                DeliveriesForm.Show();
+                DeliveriesForm.label1.Text = "LC DELIVERIES";
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = true;
+                DeliveriesForm.btnBackLCDeliveries.Visible = true;
+                DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
+            }
+            
         }
     }
 }

@@ -53,6 +53,8 @@ namespace SE_ASS
             this.btnCancelAdd = new System.Windows.Forms.Button();
             this.btnBackLCDeliveries = new System.Windows.Forms.Button();
             this.btnDeleteDeliverie = new System.Windows.Forms.Button();
+            this.btnEditLCDeliveries = new System.Windows.Forms.Button();
+            this.btnSaveEditDeliveryLC = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -267,11 +269,33 @@ namespace SE_ASS
             this.btnDeleteDeliverie.UseVisualStyleBackColor = true;
             this.btnDeleteDeliverie.Click += new System.EventHandler(this.btnDeleteDeliverie_Click);
             // 
+            // btnEditLCDeliveries
+            // 
+            this.btnEditLCDeliveries.Location = new System.Drawing.Point(411, 251);
+            this.btnEditLCDeliveries.Name = "btnEditLCDeliveries";
+            this.btnEditLCDeliveries.Size = new System.Drawing.Size(78, 43);
+            this.btnEditLCDeliveries.TabIndex = 24;
+            this.btnEditLCDeliveries.Text = "EDIT";
+            this.btnEditLCDeliveries.UseVisualStyleBackColor = true;
+            this.btnEditLCDeliveries.Click += new System.EventHandler(this.btnEditLCDeliveries_Click);
+            // 
+            // btnSaveEditDeliveryLC
+            // 
+            this.btnSaveEditDeliveryLC.Location = new System.Drawing.Point(518, 251);
+            this.btnSaveEditDeliveryLC.Name = "btnSaveEditDeliveryLC";
+            this.btnSaveEditDeliveryLC.Size = new System.Drawing.Size(86, 42);
+            this.btnSaveEditDeliveryLC.TabIndex = 25;
+            this.btnSaveEditDeliveryLC.Text = "SAVE";
+            this.btnSaveEditDeliveryLC.UseVisualStyleBackColor = true;
+            this.btnSaveEditDeliveryLC.Click += new System.EventHandler(this.btnSaveEditDeliveryLC_Click);
+            // 
             // DeliveriesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSaveEditDeliveryLC);
+            this.Controls.Add(this.btnEditLCDeliveries);
             this.Controls.Add(this.btnDeleteDeliverie);
             this.Controls.Add(this.btnBackLCDeliveries);
             this.Controls.Add(this.btnCancelAdd);
@@ -329,5 +353,7 @@ namespace SE_ASS
         public System.Windows.Forms.Button btnBackLCDeliveries;
         public System.Windows.Forms.Button btnBackdeliveriesAdmin;
         private System.Windows.Forms.Button btnDeleteDeliverie;
+        public System.Windows.Forms.Button btnEditLCDeliveries;
+        public System.Windows.Forms.Button btnSaveEditDeliveryLC;
     }
 }

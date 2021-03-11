@@ -196,9 +196,11 @@ namespace SE_ASS
 
         private void btnBackLC_Click(object sender, EventArgs e)
         {
-            LcForm LcForm = new LcForm();
+            MainForm MainForm = new MainForm();
             this.Hide();
-            LcForm.Show();
+            MainForm.Show();
+            MainForm.lblTitle.Text = "WELCOME LC";
+            MainForm.button1.Visible = false;
         }
 
         private void btnBackOwner_Click(object sender, EventArgs e)

@@ -51,6 +51,7 @@ namespace SE_ASS
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnBackdeliveriesAdmin = new System.Windows.Forms.Button();
             this.btnCancelAdd = new System.Windows.Forms.Button();
+            this.btnBackLCDeliveries = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -227,7 +228,7 @@ namespace SE_ASS
             // 
             // btnBackdeliveriesAdmin
             // 
-            this.btnBackdeliveriesAdmin.Location = new System.Drawing.Point(51, 387);
+            this.btnBackdeliveriesAdmin.Location = new System.Drawing.Point(51, 364);
             this.btnBackdeliveriesAdmin.Name = "btnBackdeliveriesAdmin";
             this.btnBackdeliveriesAdmin.Size = new System.Drawing.Size(75, 23);
             this.btnBackdeliveriesAdmin.TabIndex = 20;
@@ -245,11 +246,22 @@ namespace SE_ASS
             this.btnCancelAdd.UseVisualStyleBackColor = true;
             this.btnCancelAdd.Click += new System.EventHandler(this.btnCancelAdd_Click);
             // 
+            // btnBackLCDeliveries
+            // 
+            this.btnBackLCDeliveries.Location = new System.Drawing.Point(51, 416);
+            this.btnBackLCDeliveries.Name = "btnBackLCDeliveries";
+            this.btnBackLCDeliveries.Size = new System.Drawing.Size(75, 23);
+            this.btnBackLCDeliveries.TabIndex = 22;
+            this.btnBackLCDeliveries.Text = "BACK";
+            this.btnBackLCDeliveries.UseVisualStyleBackColor = true;
+            this.btnBackLCDeliveries.Click += new System.EventHandler(this.btnBackLCDeliveries_Click);
+            // 
             // DeliveriesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBackLCDeliveries);
             this.Controls.Add(this.btnCancelAdd);
             this.Controls.Add(this.btnBackdeliveriesAdmin);
             this.Controls.Add(this.btnRefresh);
@@ -281,8 +293,6 @@ namespace SE_ASS
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -302,7 +312,9 @@ namespace SE_ASS
         private System.Windows.Forms.Button btnPreviousRecordDeliveries;
         private System.Windows.Forms.Button btnSaveDeliveries;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnBackdeliveriesAdmin;
         private System.Windows.Forms.Button btnCancelAdd;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnBackLCDeliveries;
+        public System.Windows.Forms.Button btnBackdeliveriesAdmin;
     }
 }

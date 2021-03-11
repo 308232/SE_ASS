@@ -64,11 +64,11 @@ namespace SE_ASS
             // 
             // btnCreateNewClientContract
             // 
-            this.btnCreateNewClientContract.Location = new System.Drawing.Point(12, 276);
+            this.btnCreateNewClientContract.Location = new System.Drawing.Point(22, 284);
             this.btnCreateNewClientContract.Name = "btnCreateNewClientContract";
-            this.btnCreateNewClientContract.Size = new System.Drawing.Size(107, 59);
+            this.btnCreateNewClientContract.Size = new System.Drawing.Size(97, 51);
             this.btnCreateNewClientContract.TabIndex = 1;
-            this.btnCreateNewClientContract.Text = "CREATE NEW CLIENT CONTRACT";
+            this.btnCreateNewClientContract.Text = "CLIENT CONTRACT";
             this.btnCreateNewClientContract.UseVisualStyleBackColor = true;
             this.btnCreateNewClientContract.Click += new System.EventHandler(this.btnCreateNewClientContract_Click);
             // 
@@ -240,11 +240,11 @@ namespace SE_ASS
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(13, 360);
+            this.button2.Location = new System.Drawing.Point(22, 376);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 60);
+            this.button2.Size = new System.Drawing.Size(97, 53);
             this.button2.TabIndex = 18;
-            this.button2.Text = "Create courier jobs for non-contracted client\r\n ";
+            this.button2.Text = "Create courier jobs  ";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -291,7 +291,6 @@ namespace SE_ASS
         private System.Windows.Forms.TextBox txtboxEndDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button btnAllCAss;
         public System.Windows.Forms.TextBox txtboxCourierID;
         public System.Windows.Forms.Label label4;
@@ -301,5 +300,6 @@ namespace SE_ASS
         public System.Windows.Forms.TextBox txtboxCourierdate;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
     }
 }

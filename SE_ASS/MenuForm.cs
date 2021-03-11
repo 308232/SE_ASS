@@ -37,6 +37,7 @@ namespace SE_ASS
                 MainForm.lblTitle.Text = "WELCOME OWNER";
 
 
+
                 this.Hide();
                MainForm.Show();
 

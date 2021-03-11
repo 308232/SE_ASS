@@ -190,6 +190,30 @@ namespace SE_ASS
             this.Hide();
             MainForm.Show();
         }
+
+        private void btnBackLC_Click(object sender, EventArgs e)
+        {
+            LcForm LcForm = new LcForm();
+            this.Hide();
+            LcForm.Show();
+        }
+
+        private void btnBackOwner_Click(object sender, EventArgs e)
+        {
+            MainForm MainForm = new MainForm();
+            MainForm.btnAllCAss.Visible = false;
+            MainForm.label4.Visible = false;
+            MainForm.label5.Visible = false;
+            MainForm.label6.Visible = false;
+            MainForm.txtboxCourierID.Visible = false;
+            MainForm.txtboxCourierdate.Visible = false;
+            MainForm.lblTitle.Text = "WELCOME OWNER";
+
+
+
+            this.Hide();
+            MainForm.Show();
+        }
     }
     
 }

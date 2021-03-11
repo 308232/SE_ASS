@@ -16,5 +16,23 @@ namespace SE_ASS
         {
             InitializeComponent();
         }
+
+        private void btnEditCustomerContracts_Click(object sender, EventArgs e)
+        {
+            NewClientForm NewClientForm = new NewClientForm();
+            NewClientForm.btnAddNewClient.Visible = false;
+            NewClientForm.btnSaveNewClientRecord.Visible = false;
+            NewClientForm.btnBack.Visible = false;
+            NewClientForm.btnBackOwner.Visible = false;
+            this.Hide();
+            NewClientForm.Show();
+        }
+
+        private void btnBackLc_Click(object sender, EventArgs e)
+        {
+            MenuForm MenuForm = new MenuForm();
+            this.Hide();
+            MenuForm.Show();
+        }
     }
 }

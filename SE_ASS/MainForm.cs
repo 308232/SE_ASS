@@ -177,5 +177,12 @@ namespace SE_ASS
             this.Hide();
             MenuForm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DeliveriesForm DeliveriesForm = new DeliveriesForm();
+            this.Hide();
+            DeliveriesForm.Show();
+        }
     }
 }

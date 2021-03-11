@@ -61,13 +61,25 @@ namespace SE_ASS
                 MainForm.lblTitle.Text = "WELCOME LC";
                 MainForm.button1.Visible = false;
             }
-            else if ((txtUserName.Text == "Couriers") && (txtPassword.Text == "a"))
+            else if ((txtUserName.Text == "a") && (txtPassword.Text == "a"))
             {
                 userRights = "Couriers";
-
-                CourrierForm CourrierForm = new CourrierForm();
+                MainForm MainForm = new MainForm();
                 this.Hide();
-               CourrierForm.Show();
+                MainForm.Show();
+                MainForm.lblTitle.Text = "WELCOME COURIER";
+                MainForm.button1.Visible = false;
+                MainForm.label1.Visible = false;
+                MainForm.btnCreateNewClientContract.Visible = false;
+                MainForm.btnAllCAss.Visible = true;
+                MainForm.label2.Visible = false;
+                MainForm.label3.Visible = false;
+                MainForm.txtboxStartDate.Visible = false;
+                MainForm.txtboxEndDate.Visible = false;
+                MainForm.button1.Visible = false;
+                MainForm.btnShowAllAssForACourierForADAY.Visible = false;
+                MainForm.button2.Visible = false;
+
             }
             else
             {

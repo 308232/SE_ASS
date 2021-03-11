@@ -282,15 +282,8 @@ namespace SE_ASS
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCreateNewClientContract;
-        private System.Windows.Forms.Button btnShowAllAssForACourierForADAY;
         private System.Windows.Forms.DataGridView dataGridViewAdmin;
         private System.Windows.Forms.ComboBox comboboxWhichday;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtboxStartDate;
-        private System.Windows.Forms.TextBox txtboxEndDate;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Button btnAllCAss;
         public System.Windows.Forms.TextBox txtboxCourierID;
         public System.Windows.Forms.Label label4;
@@ -301,5 +294,12 @@ namespace SE_ASS
         private System.Windows.Forms.Button btnBack;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button btnCreateNewClientContract;
+        public System.Windows.Forms.Button btnShowAllAssForACourierForADAY;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txtboxStartDate;
+        public System.Windows.Forms.TextBox txtboxEndDate;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
     }
 }

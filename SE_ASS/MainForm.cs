@@ -202,6 +202,8 @@ namespace SE_ASS
                 this.Hide();
                 DeliveriesForm.Show();
                 DeliveriesForm.label1.Text = "ADMIN DELIVERIES";
+                DeliveriesForm.btnEditLCDeliveries.Visible = false;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
                 DeliveriesForm.btnBackLCDeliveries.Visible = false;
             }
             else if(lblTitle.Text=="WELCOME LC")
@@ -210,7 +212,11 @@ namespace SE_ASS
                 this.Hide();
                 DeliveriesForm.Show();
                 DeliveriesForm.label1.Text = "LC DELIVERIES";
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = true;
+                DeliveriesForm.btnBackLCDeliveries.Visible = true;
                 DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
+
             }
         }
     }

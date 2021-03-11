@@ -21,6 +21,8 @@ namespace SE_ASS
 
 
         System.Data.SqlClient.SqlConnection newCon;
+        
+
         //in order to read the information and pass it to the text boxes a data adapater and data set must be set 
         DataSet dsCustomer;
         System.Data.SqlClient.SqlDataAdapter daCustomer;
@@ -31,7 +33,7 @@ namespace SE_ASS
             InitializeComponent();
         }
 
-        private void MoveRecords()
+       public void MoveRecords()
         {
             DataRow OneRecord = dsCustomer.Tables["Customers"].Rows[whichrec];
 
@@ -50,6 +52,7 @@ namespace SE_ASS
 
         private void NewClientForm_Load(object sender, EventArgs e)
         {
+            btnUPDATE.Visible = false;
 
             newCon = new System.Data.SqlClient.SqlConnection();
             newCon.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Mitko Bozhilov\\Work Year 6\\Software Eng\\Ass\\MyDataBase\\MyDataBase\\BookingSystemDataBase.mdf;Integrated Security=True; Connect Timeout=30";
@@ -71,15 +74,15 @@ namespace SE_ASS
                 daCustomer.Fill(dsCustomer, "Customers");
 
 
-                
+
 
                 MoveRecords();
                 countrec = dsCustomer.Tables["Customers"].Rows.Count;
-
+                
             }
             catch
             {
-                MessageBox.Show("Yess");
+                MessageBox.Show("no connection ");
 
             }
             newCon.Close();
@@ -213,6 +216,82 @@ namespace SE_ASS
 
             this.Hide();
             MainForm.Show();
+        }
+
+        private void btnEDIT_Click(object sender, EventArgs e)
+        {
+            txtboxClientID.Enabled = false;
+            btnSaveNewClientRecord.Visible = false;
+            btnAddNewClient.Visible = false;
+            btnUPDATE.Visible = true;
+
+            btnFirstRecordClientsForm.Visible = false;
+            btnNextRecordClientsForm.Visible = false;
+            btnLastRecord.Visible = false;
+            btnPreviusRecord.Visible = false;
+            btnEDIT.Visible = false;
+            
+        }
+
+        private void btnUPDATE_Click(object sender, EventArgs e)
+        {
+
+            
+            dsCustomer = new DataSet();
+            
+
+            //a private string to pass the data from the database to. 
+            
+            //in order to read the dataabse sql code is used as shown below 
+
+            String Update = "UPDATE ClientsTbl SET HouseNo='"+txtboxHouseNo.Text+"' WHERE ClientID='"+txtboxClientID.Text+"'";
+
+            SqlConnection conn = new SqlConnection(newCon.ConnectionString);
+            SqlCommand cmd = new SqlCommand(Update, conn);
+            SqlDataReader read;
+
+
+            try
+            {
+                //open the database connection 
+                conn.Open();
+                read = cmd.ExecuteReader();
+                MessageBox.Show("Record Updated");
+                
+
+                
+
+               
+
+            }
+            catch
+            {
+                MessageBox.Show("Not able to update the databse ");
+
+            }
+            
+            conn.Close();
+
+            btnFirstRecordClientsForm.Visible = true;
+            btnNextRecordClientsForm.Visible = true;
+            btnLastRecord.Visible = true;
+            btnPreviusRecord.Visible = true;
+            btnEDIT.Visible = true;
+
+            btnUPDATE.Visible = false;
+            btnSaveNewClientRecord.Visible = true;
+            btnAddNewClient.Visible = true;
+            NewClientForm NewClientForm = new NewClientForm();
+            NewClientForm.btnBackLC.Visible = false;
+            NewClientForm.btnBackOwner.Visible = false;
+            NewClientForm.btnAddNewClient.Visible = true;
+            NewClientForm.btnSaveNewClientRecord.Visible = true;
+            NewClientForm.btnEDIT.Visible = true;
+            NewClientForm.btnUPDATE.Visible = false;
+
+            this.Hide();
+            NewClientForm.Show();
+
         }
     }
     

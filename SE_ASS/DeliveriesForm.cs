@@ -92,6 +92,7 @@ namespace SE_ASS
         private void btnAddNewCourierJob_Click(object sender, EventArgs e)
         {
 
+
             btnSaveDeliveries.Visible = true;
             btnPreviousRecordDeliveries.Visible = false;
             btnNextRecordDeliveries.Visible = false;
@@ -227,9 +228,25 @@ namespace SE_ASS
 
         private void btnCancelAdd_Click(object sender, EventArgs e)
         {
-            DeliveriesForm DeliveriesForm = new DeliveriesForm();
-            this.Hide();
-            DeliveriesForm.Show();
+            if (label1.Text == "LC DELIVERIES")
+            {
+
+                DeliveriesForm DeliveriesForm = new DeliveriesForm();
+                this.Hide();
+                DeliveriesForm.Show();
+                DeliveriesForm.label1.Text = "LC DELIVERIES";
+                DeliveriesForm.btnBackLCDeliveries.Visible = true;
+                DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
+            }
+            else if (label1.Text == "ADMIN DELIVERIES")
+            {
+                DeliveriesForm DeliveriesForm = new DeliveriesForm();
+                this.Hide();
+                DeliveriesForm.Show();
+                DeliveriesForm.label1.Text = "ADMIN DELIVERIES";
+                DeliveriesForm.btnBackLCDeliveries.Visible = false;
+                DeliveriesForm.btnBackdeliveriesAdmin.Visible = true;
+            }
         }
 
         private void btnBackLCDeliveries_Click(object sender, EventArgs e)

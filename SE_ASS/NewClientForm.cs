@@ -213,7 +213,7 @@ namespace SE_ASS
             MainForm.txtboxCourierID.Visible = false;
             MainForm.txtboxCourierdate.Visible = false;
             MainForm.lblTitle.Text = "WELCOME OWNER";
-
+            MainForm.button2.Visible = false;
 
 
             this.Hide();
@@ -246,7 +246,7 @@ namespace SE_ASS
             
             //in order to read the dataabse sql code is used as shown below 
 
-            String Update = "UPDATE ClientsTbl SET HouseNo='"+txtboxHouseNo.Text+"' WHERE ClientID='"+txtboxClientID.Text+"'";
+            String Update = "UPDATE ClientsTbl SET BusinessName='"+txtboxBusinessName.Text+"', HouseNo='"+txtboxHouseNo.Text+"', StreetName='"+txtboxStreetName.Text+"', PostCode='"+txtboxPostCode.Text+"', PhoneNumber='"+txtboxPhoneNumber.Text+"', Email='"+txtboxEmail.Text+"', Notes='"+txtboxNotes.Text+"', AssID='"+txtboxAssId.Text+"', Contracted='"+txtboxContracted.Text+"' WHERE ClientID='"+txtboxClientID.Text+"'";
 
             SqlConnection conn = new SqlConnection(newCon.ConnectionString);
             SqlCommand cmd = new SqlCommand(Update, conn);
@@ -283,16 +283,34 @@ namespace SE_ASS
             btnUPDATE.Visible = false;
             btnSaveNewClientRecord.Visible = true;
             btnAddNewClient.Visible = true;
-            NewClientForm NewClientForm = new NewClientForm();
-            NewClientForm.btnBackLC.Visible = false;
-            NewClientForm.btnBackOwner.Visible = false;
-            NewClientForm.btnAddNewClient.Visible = true;
-            NewClientForm.btnSaveNewClientRecord.Visible = true;
-            NewClientForm.btnEDIT.Visible = true;
-            NewClientForm.btnUPDATE.Visible = false;
+            if (label1.Text == "LC CLIENT FORM")
+            {
+                NewClientForm NewClientForm = new NewClientForm();
+                NewClientForm.btnBack.Visible = false;
+                NewClientForm.btnBackLC.Visible = true;
+                NewClientForm.btnBackOwner.Visible = false;
+                NewClientForm.btnAddNewClient.Visible = false;
+                NewClientForm.btnSaveNewClientRecord.Visible = false;
+                NewClientForm.btnEDIT.Visible = true;
+                NewClientForm.btnUPDATE.Visible = false;
+                NewClientForm.label1.Text = "LC CLIENT FORM";
 
-            this.Hide();
-            NewClientForm.Show();
+                this.Hide();
+                NewClientForm.Show();
+            }
+            else if (label1.Text == "ADMIN CLIENT FORM")
+            {
+                NewClientForm NewClientForm = new NewClientForm();
+                NewClientForm.btnBackLC.Visible = false;
+                NewClientForm.btnBackOwner.Visible = false;
+                NewClientForm.btnAddNewClient.Visible = true;
+                NewClientForm.btnSaveNewClientRecord.Visible = true;
+                NewClientForm.btnEDIT.Visible = true;
+                NewClientForm.btnUPDATE.Visible = false;
+                NewClientForm.label1.Text = "ADMIN CLIENT FORM";
+                this.Hide();
+                NewClientForm.Show();
+            }
 
         }
     }

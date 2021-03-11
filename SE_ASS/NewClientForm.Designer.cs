@@ -412,8 +412,6 @@ namespace SE_ASS
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtboxClientID;
         private System.Windows.Forms.TextBox txtboxBusinessName;
         private System.Windows.Forms.TextBox txtboxHouseNo;
@@ -445,5 +443,6 @@ namespace SE_ASS
         public System.Windows.Forms.Button btnBackOwner;
         public System.Windows.Forms.Button btnEDIT;
         public System.Windows.Forms.Button btnUPDATE;
+        public System.Windows.Forms.Label label1;
     }
 }

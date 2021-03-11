@@ -37,7 +37,8 @@ namespace SE_ASS
                 NewClientForm.btnSaveNewClientRecord.Visible = false;
                 NewClientForm.btnEDIT.Visible = false;
                 NewClientForm.btnUPDATE.Visible = false;
-
+                NewClientForm.label1.Text = "Owner CLIENT FORM";
+                
                 this.Hide();
                 NewClientForm.Show();
             }
@@ -50,7 +51,7 @@ namespace SE_ASS
                 NewClientForm.btnSaveNewClientRecord.Visible = true;
                 NewClientForm.btnEDIT.Visible = true;
                 NewClientForm.btnUPDATE.Visible = false;
-
+                NewClientForm.label1.Text = "ADMIN CLIENT FORM";
                 this.Hide();
                 NewClientForm.Show();
             }
@@ -64,7 +65,8 @@ namespace SE_ASS
                 NewClientForm.btnSaveNewClientRecord.Visible = false;
                 NewClientForm.btnEDIT.Visible = true;
                 NewClientForm.btnUPDATE.Visible = false;
-              
+                NewClientForm.label1.Text = "LC CLIENT FORM";
+
                 this.Hide();
                 NewClientForm.Show();
             }

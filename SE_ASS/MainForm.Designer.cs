@@ -299,7 +299,7 @@ namespace SE_ASS
         public System.Windows.Forms.Label lblTitle;
         public System.Windows.Forms.TextBox txtboxCourierdate;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button2;
     }
 }

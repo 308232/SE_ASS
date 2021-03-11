@@ -24,6 +24,8 @@ namespace SE_ASS
             NewClientForm.btnSaveNewClientRecord.Visible = false;
             NewClientForm.btnBack.Visible = false;
             NewClientForm.btnBackOwner.Visible = false;
+            NewClientForm.btnEDIT.Visible = true;
+            NewClientForm.btnUPDATE.Visible = true;
             this.Hide();
             NewClientForm.Show();
         }

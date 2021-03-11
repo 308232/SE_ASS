@@ -35,6 +35,8 @@ namespace SE_ASS
                 NewClientForm.btnBack.Visible = false;
                 NewClientForm.btnAddNewClient.Visible = false;
                 NewClientForm.btnSaveNewClientRecord.Visible = false;
+                NewClientForm.btnEDIT.Visible = false;
+                NewClientForm.btnUPDATE.Visible = false;
 
                 this.Hide();
                 NewClientForm.Show();
@@ -46,6 +48,8 @@ namespace SE_ASS
                 NewClientForm.btnBackOwner.Visible = false;
                 NewClientForm.btnAddNewClient.Visible = true;
                 NewClientForm.btnSaveNewClientRecord.Visible = true;
+                NewClientForm.btnEDIT.Visible = true;
+                NewClientForm.btnUPDATE.Visible = false;
 
                 this.Hide();
                 NewClientForm.Show();

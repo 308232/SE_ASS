@@ -59,6 +59,8 @@ namespace SE_ASS
             this.btnBack = new System.Windows.Forms.Button();
             this.btnBackLC = new System.Windows.Forms.Button();
             this.btnBackOwner = new System.Windows.Forms.Button();
+            this.btnEDIT = new System.Windows.Forms.Button();
+            this.btnUPDATE = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -342,12 +344,35 @@ namespace SE_ASS
             this.btnBackOwner.UseVisualStyleBackColor = true;
             this.btnBackOwner.Click += new System.EventHandler(this.btnBackOwner_Click);
             // 
+            // btnEDIT
+            // 
+            this.btnEDIT.Location = new System.Drawing.Point(659, 269);
+            this.btnEDIT.Name = "btnEDIT";
+            this.btnEDIT.Size = new System.Drawing.Size(75, 43);
+            this.btnEDIT.TabIndex = 31;
+            this.btnEDIT.Text = "EDIT ";
+            this.btnEDIT.UseVisualStyleBackColor = true;
+            this.btnEDIT.Click += new System.EventHandler(this.btnEDIT_Click);
+            // 
+            // btnUPDATE
+            // 
+            this.btnUPDATE.Location = new System.Drawing.Point(762, 268);
+            this.btnUPDATE.Name = "btnUPDATE";
+            this.btnUPDATE.Size = new System.Drawing.Size(75, 44);
+            this.btnUPDATE.TabIndex = 32;
+            this.btnUPDATE.Text = "UPDATE";
+            this.btnUPDATE.UseVisualStyleBackColor = true;
+            this.btnUPDATE.Visible = false;
+            this.btnUPDATE.Click += new System.EventHandler(this.btnUPDATE_Click);
+            // 
             // NewClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(919, 566);
+            this.Controls.Add(this.btnUPDATE);
+            this.Controls.Add(this.btnEDIT);
             this.Controls.Add(this.btnBackOwner);
             this.Controls.Add(this.btnBackLC);
             this.Controls.Add(this.btnBack);
@@ -418,5 +443,7 @@ namespace SE_ASS
         public System.Windows.Forms.Button btnBackLC;
         public System.Windows.Forms.Button btnBack;
         public System.Windows.Forms.Button btnBackOwner;
+        public System.Windows.Forms.Button btnEDIT;
+        public System.Windows.Forms.Button btnUPDATE;
     }
 }

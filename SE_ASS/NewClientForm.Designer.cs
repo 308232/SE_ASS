@@ -57,6 +57,8 @@ namespace SE_ASS
             this.txtboxContracted = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnBackLC = new System.Windows.Forms.Button();
+            this.btnBackOwner = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -320,12 +322,34 @@ namespace SE_ASS
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnBackLC
+            // 
+            this.btnBackLC.Location = new System.Drawing.Point(580, 486);
+            this.btnBackLC.Name = "btnBackLC";
+            this.btnBackLC.Size = new System.Drawing.Size(112, 53);
+            this.btnBackLC.TabIndex = 29;
+            this.btnBackLC.Text = "BACK";
+            this.btnBackLC.UseVisualStyleBackColor = true;
+            this.btnBackLC.Click += new System.EventHandler(this.btnBackLC_Click);
+            // 
+            // btnBackOwner
+            // 
+            this.btnBackOwner.Location = new System.Drawing.Point(789, 486);
+            this.btnBackOwner.Name = "btnBackOwner";
+            this.btnBackOwner.Size = new System.Drawing.Size(97, 53);
+            this.btnBackOwner.TabIndex = 30;
+            this.btnBackOwner.Text = "BACK";
+            this.btnBackOwner.UseVisualStyleBackColor = true;
+            this.btnBackOwner.Click += new System.EventHandler(this.btnBackOwner_Click);
+            // 
             // NewClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(919, 566);
+            this.Controls.Add(this.btnBackOwner);
+            this.Controls.Add(this.btnBackLC);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtboxContracted);
@@ -385,12 +409,14 @@ namespace SE_ASS
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnFirstRecordClientsForm;
         private System.Windows.Forms.Button btnNextRecordClientsForm;
-        private System.Windows.Forms.Button btnSaveNewClientRecord;
-        private System.Windows.Forms.Button btnAddNewClient;
         private System.Windows.Forms.Button btnPreviusRecord;
         private System.Windows.Forms.Button btnLastRecord;
         private System.Windows.Forms.TextBox txtboxContracted;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnBack;
+        public System.Windows.Forms.Button btnSaveNewClientRecord;
+        public System.Windows.Forms.Button btnAddNewClient;
+        public System.Windows.Forms.Button btnBackLC;
+        public System.Windows.Forms.Button btnBack;
+        public System.Windows.Forms.Button btnBackOwner;
     }
 }

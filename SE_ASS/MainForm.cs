@@ -28,9 +28,28 @@ namespace SE_ASS
 
         private void btnCreateNewClientContract_Click(object sender, EventArgs e)
         {
-            NewClientForm NewClientForm = new NewClientForm();
-            this.Hide();
-            NewClientForm.Show();
+            if (lblTitle.Text == "WELCOME OWNER")
+            {
+                NewClientForm NewClientForm = new NewClientForm();
+                NewClientForm.btnBackLC.Visible = false;
+                NewClientForm.btnBack.Visible = false;
+                NewClientForm.btnAddNewClient.Visible = false;
+                NewClientForm.btnSaveNewClientRecord.Visible = false;
+
+                this.Hide();
+                NewClientForm.Show();
+            }
+            else if(lblTitle.Text=="WELCOME ADMIN")
+            {
+                NewClientForm NewClientForm = new NewClientForm();
+                NewClientForm.btnBackLC.Visible = false;
+                NewClientForm.btnBackOwner.Visible = false;
+                NewClientForm.btnAddNewClient.Visible = true;
+                NewClientForm.btnSaveNewClientRecord.Visible = true;
+
+                this.Hide();
+                NewClientForm.Show();
+            }
         }
 
         private void btnShowAllAssForACourierForADAY_Click(object sender, EventArgs e)

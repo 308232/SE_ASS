@@ -275,32 +275,30 @@ namespace SE_ASS
         private void btnDeleteDeliverie_Click(object sender, EventArgs e)
         {
 
-
+            //setting DataSet to populate with the data I use the same name as in my customer form 
             dsCustomer = new DataSet();
 
 
-            //a private string to pass the data from the database to. 
+            
 
             //in order to read the dataabse sql code is used as shown below 
 
             String Update = "DELETE FROM DeliveriesTbl WHERE DeliveriesID='"+txtboxDeliverieID.Text+"'";
 
+
+            //seting a new sql connection based on my already loaded one 
             SqlConnection conn = new SqlConnection(newCon.ConnectionString);
             SqlCommand cmd = new SqlCommand(Update, conn);
             SqlDataReader read;
 
-
+            //try and catch n order to confirm if the record has been deleted 
             try
             {
                 //open the database connection 
                 conn.Open();
+                //read the cmd reader and assign to read
                 read = cmd.ExecuteReader();
                 MessageBox.Show("Record Deleted");
-
-
-
-
-
 
             }
             catch
@@ -310,8 +308,7 @@ namespace SE_ASS
             }
 
             conn.Close();
-
-            
+            //if checking the titile label so it will load the corect functions when the delete button is pressed 
             if (label1.Text == "LC CLIENT FORM")
             {
                 NewClientForm NewClientForm = new NewClientForm();
@@ -327,6 +324,7 @@ namespace SE_ASS
                 this.Hide();
                 NewClientForm.Show();
             }
+            //if checking the titile label so it will load the corect functions when the delete button is pressed 
             else if (label1.Text == "ADMIN CLIENT FORM")
             {
                 NewClientForm NewClientForm = new NewClientForm();

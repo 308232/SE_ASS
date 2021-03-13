@@ -127,9 +127,19 @@ namespace SE_ASS
             System.Data.SqlClient.SqlCommandBuilder myUpdateDB;
             myUpdateDB = new System.Data.SqlClient.SqlCommandBuilder(daCustomer);
             myUpdateDB.DataAdapter.Update(dsCustomer.Tables["Customers"]);
-            
-            MoveRecords();
-            
+            MessageBox.Show("Record Saved");
+
+            NewClientForm NewClientForm = new NewClientForm();
+            NewClientForm.btnBackLC.Visible = false;
+            NewClientForm.btnBackOwner.Visible = false;
+            NewClientForm.btnAddNewClient.Visible = true;
+            NewClientForm.btnSaveNewClientRecord.Visible = true;
+            NewClientForm.btnEDIT.Visible = true;
+            NewClientForm.btnUPDATE.Visible = false;
+            NewClientForm.label1.Text = "ADMIN CLIENT FORM";
+            this.Hide();
+            NewClientForm.Show();
+
         }
 
         private void btnAddNewClient_Click(object sender, EventArgs e)

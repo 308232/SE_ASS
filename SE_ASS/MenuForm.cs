@@ -79,6 +79,7 @@ namespace SE_ASS
                 MainForm.button1.Visible = false;
                 MainForm.btnShowAllAssForACourierForADAY.Visible = false;
                 MainForm.button2.Visible = false;
+                MainForm.btnCourierAss.Visible = true;
 
             }
             else

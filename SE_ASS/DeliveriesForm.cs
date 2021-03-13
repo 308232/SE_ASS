@@ -359,7 +359,8 @@ namespace SE_ASS
         {
 
 
-            
+          
+
 
 
                 String Update = "UPDATE DeliveriesTbl SET DeliveryHoursStart='" + txtboxDeliverieHourStart.Text + "', DeliveryHoursEnd='" + txtboxDeliveryHourEnd.Text + "', DeliveryDayStart='" + txtboxDeliverieDayStart.Text + "', DeliveryDayEnd='" + txtboxDeliverieDayEnd.Text + "', CourierID='" + txtboxCourierID.Text + "', Contracted='" + txtboxContracted.Text + "' WHERE DeliveriesID='" + txtboxDeliverieID.Text + "'";
@@ -386,7 +387,8 @@ namespace SE_ASS
                 }
 
                 conn.Close();
-            
+          
+          
             
             if (label1.Text == "LC DELIVERIES")
             {

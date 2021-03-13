@@ -219,5 +219,12 @@ namespace SE_ASS
 
             }
         }
+
+        private void btnCourierAss_Click(object sender, EventArgs e)
+        {
+            CourierAssForm CourierAssForm = new CourierAssForm();
+            this.Hide();
+            CourierAssForm.Show();
+        }
     }
 }

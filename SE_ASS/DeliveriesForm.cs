@@ -133,70 +133,96 @@ namespace SE_ASS
 
         private void btnSaveDeliveries_Click(object sender, EventArgs e)
         {
+             
             if (txtboxContracted.Text == "n" && label1.Text=="ADMIN DELIVERIES")
             {
-                DataRow OneRecord = dsCustomer.Tables["Deliveries"].NewRow();
-                OneRecord[0] = txtboxDeliverieID.Text;
-                OneRecord[1] = txtboxDeliverieHourStart.Text;
-                OneRecord[2] = txtboxDeliveryHourEnd.Text;
-                OneRecord[3] = txtboxDeliverieDayStart.Text;
-                OneRecord[4] = txtboxDeliverieDayEnd.Text;
-                OneRecord[5] = txtboxCourierID.Text;
-                OneRecord[6] = txtboxContracted.Text;
+                DateTime startTime = Convert.ToDateTime("08:30");
+                DateTime endTime = Convert.ToDateTime("16:30");
+                DateTime cStartTime = Convert.ToDateTime(txtboxDeliverieHourStart.Text);
+                DateTime cEndtTime = Convert.ToDateTime(txtboxDeliveryHourEnd.Text);
+
+                if (cStartTime > startTime && cEndtTime < endTime)
+                {
+                    DataRow OneRecord = dsCustomer.Tables["Deliveries"].NewRow();
+                    OneRecord[0] = txtboxDeliverieID.Text;
+                    OneRecord[1] = txtboxDeliverieHourStart.Text;
+                    OneRecord[2] = txtboxDeliveryHourEnd.Text;
+                    OneRecord[3] = txtboxDeliverieDayStart.Text;
+                    OneRecord[4] = txtboxDeliverieDayEnd.Text;
+                    OneRecord[5] = txtboxCourierID.Text;
+                    OneRecord[6] = txtboxContracted.Text;
 
 
 
 
 
-                dsCustomer.Tables["Deliveries"].Rows.Add(OneRecord);
+                    dsCustomer.Tables["Deliveries"].Rows.Add(OneRecord);
 
 
-                System.Data.SqlClient.SqlCommandBuilder myUpdateDB;
-                myUpdateDB = new System.Data.SqlClient.SqlCommandBuilder(daCustomer);
-                myUpdateDB.DataAdapter.Update(dsCustomer.Tables["Deliveries"]);
+                    System.Data.SqlClient.SqlCommandBuilder myUpdateDB;
+                    myUpdateDB = new System.Data.SqlClient.SqlCommandBuilder(daCustomer);
+                    myUpdateDB.DataAdapter.Update(dsCustomer.Tables["Deliveries"]);
 
-                btnNextRecordDeliveries.Visible = true;
-                btnPreviousRecordDeliveries.Visible = true;
-                btnSaveDeliveries.Visible = false;
-                btnAddNewCourierJob.Visible = true;
-                btnRefresh.Visible = true;
-                btnCancelAdd.Visible = false;
-                btnSaveEditDeliveryLC.Visible = false;
-                btnEditLCDeliveries.Visible = false;
-                MessageBox.Show("New Record Has Been Added. Click on Refresh to refresh the DataBase");
+                    btnNextRecordDeliveries.Visible = true;
+                    btnPreviousRecordDeliveries.Visible = true;
+                    btnSaveDeliveries.Visible = false;
+                    btnAddNewCourierJob.Visible = true;
+                    btnRefresh.Visible = true;
+                    btnCancelAdd.Visible = false;
+                    btnSaveEditDeliveryLC.Visible = false;
+                    btnEditLCDeliveries.Visible = false;
+                    MessageBox.Show("New Record Has Been Added. Click on Refresh to refresh the DataBase");
+                }
+                else
+                {
+                    MessageBox.Show("The Time must be between 08:30 and 16:30");
+                }
+                
             }
             else if(txtboxContracted.Text == "y" && label1.Text == "LC DELIVERIES")
             {
-                DataRow OneRecord = dsCustomer.Tables["Deliveries"].NewRow();
-                OneRecord[0] = txtboxDeliverieID.Text;
-                OneRecord[1] = txtboxDeliverieHourStart.Text;
-                OneRecord[2] = txtboxDeliveryHourEnd.Text;
-                OneRecord[3] = txtboxDeliverieDayStart.Text;
-                OneRecord[4] = txtboxDeliverieDayEnd.Text;
-                OneRecord[5] = txtboxCourierID.Text;
-                OneRecord[6] = txtboxContracted.Text;
+                DateTime startTime = Convert.ToDateTime("08:30");
+                DateTime endTime = Convert.ToDateTime("16:30");
+                DateTime cStartTime = Convert.ToDateTime(txtboxDeliverieHourStart.Text);
+                DateTime cEndtTime = Convert.ToDateTime(txtboxDeliveryHourEnd.Text);
+
+                if (cStartTime > startTime && cEndtTime < endTime)
+                {
+                    DataRow OneRecord = dsCustomer.Tables["Deliveries"].NewRow();
+                    OneRecord[0] = txtboxDeliverieID.Text;
+                    OneRecord[1] = txtboxDeliverieHourStart.Text;
+                    OneRecord[2] = txtboxDeliveryHourEnd.Text;
+                    OneRecord[3] = txtboxDeliverieDayStart.Text;
+                    OneRecord[4] = txtboxDeliverieDayEnd.Text;
+                    OneRecord[5] = txtboxCourierID.Text;
+                    OneRecord[6] = txtboxContracted.Text;
 
 
 
 
 
-                dsCustomer.Tables["Deliveries"].Rows.Add(OneRecord);
+                    dsCustomer.Tables["Deliveries"].Rows.Add(OneRecord);
 
 
-                System.Data.SqlClient.SqlCommandBuilder myUpdateDB;
-                myUpdateDB = new System.Data.SqlClient.SqlCommandBuilder(daCustomer);
-                myUpdateDB.DataAdapter.Update(dsCustomer.Tables["Deliveries"]);
+                    System.Data.SqlClient.SqlCommandBuilder myUpdateDB;
+                    myUpdateDB = new System.Data.SqlClient.SqlCommandBuilder(daCustomer);
+                    myUpdateDB.DataAdapter.Update(dsCustomer.Tables["Deliveries"]);
 
-                btnNextRecordDeliveries.Visible = true;
-                btnPreviousRecordDeliveries.Visible = true;
-                btnSaveDeliveries.Visible = false;
-                btnAddNewCourierJob.Visible = true;
-                btnRefresh.Visible = true;
-                btnCancelAdd.Visible = false;
-                btnSaveEditDeliveryLC.Visible = true;
-                btnEditLCDeliveries.Visible = true;
-                btnSaveEditDeliveryLC.Visible = false;
-                MessageBox.Show("New Record Has Been Added. Click on Refresh to refresh the DataBase");
+                    btnNextRecordDeliveries.Visible = true;
+                    btnPreviousRecordDeliveries.Visible = true;
+                    btnSaveDeliveries.Visible = false;
+                    btnAddNewCourierJob.Visible = true;
+                    btnRefresh.Visible = true;
+                    btnCancelAdd.Visible = false;
+                    btnSaveEditDeliveryLC.Visible = true;
+                    btnEditLCDeliveries.Visible = true;
+                    btnSaveEditDeliveryLC.Visible = false;
+                    MessageBox.Show("New Record Has Been Added. Click on Refresh to refresh the DataBase");
+                }
+                else
+                {
+                    MessageBox.Show("Delivery times must be betwen 08:30 and 16:30");
+                }
             }
             else
             {

@@ -108,6 +108,8 @@ namespace SE_ASS
             btnRefresh.Visible = false;
             btnCancelAdd.Visible = true;
             btnDeleteDeliverie.Visible = false;
+            btnEditLCDeliveries.Visible = false;
+            btnSaveEditDeliveryLC.Visible = false;
 
         }
 
@@ -193,6 +195,7 @@ namespace SE_ASS
                 btnCancelAdd.Visible = false;
                 btnSaveEditDeliveryLC.Visible = true;
                 btnEditLCDeliveries.Visible = true;
+                btnSaveEditDeliveryLC.Visible = false;
                 MessageBox.Show("New Record Has Been Added. Click on Refresh to refresh the DataBase");
             }
             else
@@ -249,6 +252,9 @@ namespace SE_ASS
                 DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
                 DeliveriesForm.btnSaveEditDeliveryLC.Visible = true;
                 DeliveriesForm.btnBackLCDeliveries.Visible = true;
+                DeliveriesForm.btnSaveDeliveries.Visible = false;
+                DeliveriesForm.btnCancelAdd.Visible = false;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
             }
             else if (label1.Text == "ADMIN DELIVERIES")
             {
@@ -309,34 +315,27 @@ namespace SE_ASS
 
             conn.Close();
             //if checking the titile label so it will load the corect functions when the delete button is pressed 
-            if (label1.Text == "LC CLIENT FORM")
+            if (label1.Text == "WELCOME ADMIN")
             {
-                NewClientForm NewClientForm = new NewClientForm();
-                NewClientForm.btnBack.Visible = false;
-                NewClientForm.btnBackLC.Visible = true;
-                NewClientForm.btnBackOwner.Visible = false;
-                NewClientForm.btnAddNewClient.Visible = false;
-                NewClientForm.btnSaveNewClientRecord.Visible = false;
-                NewClientForm.btnEDIT.Visible = true;
-                NewClientForm.btnUPDATE.Visible = false;
-                NewClientForm.label1.Text = "LC CLIENT FORM";
-
+                DeliveriesForm DeliveriesForm = new DeliveriesForm();
                 this.Hide();
-                NewClientForm.Show();
+                DeliveriesForm.Show();
+                DeliveriesForm.label1.Text = "ADMIN DELIVERIES";
+                DeliveriesForm.btnEditLCDeliveries.Visible = false;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
+                DeliveriesForm.btnBackLCDeliveries.Visible = false;
             }
-            //if checking the titile label so it will load the corect functions when the delete button is pressed 
-            else if (label1.Text == "ADMIN CLIENT FORM")
+            else if (label1.Text == "LC DELIVERIES")
             {
-                NewClientForm NewClientForm = new NewClientForm();
-                NewClientForm.btnBackLC.Visible = false;
-                NewClientForm.btnBackOwner.Visible = false;
-                NewClientForm.btnAddNewClient.Visible = true;
-                NewClientForm.btnSaveNewClientRecord.Visible = true;
-                NewClientForm.btnEDIT.Visible = true;
-                NewClientForm.btnUPDATE.Visible = false;
-                NewClientForm.label1.Text = "ADMIN CLIENT FORM";
+                DeliveriesForm DeliveriesForm = new DeliveriesForm();
                 this.Hide();
-                NewClientForm.Show();
+                DeliveriesForm.Show();
+                DeliveriesForm.label1.Text = "LC DELIVERIES";
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = true;
+                DeliveriesForm.btnBackLCDeliveries.Visible = true;
+                DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
+                DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
+
             }
 
         }
@@ -358,12 +357,7 @@ namespace SE_ASS
 
         private void btnSaveEditDeliveryLC_Click(object sender, EventArgs e)
         {
-
-
-
-            dsCustomer = new DataSet();
-
-
+          
             //a private string to pass the data from the database to. 
 
             //in order to read the dataabse sql code is used as shown below 
@@ -378,13 +372,10 @@ namespace SE_ASS
             try
             {
                 //open the database connection 
+
                 conn.Open();
                 read = cmd.ExecuteReader();
                 MessageBox.Show("Record Updated");
-
-
-
-
 
 
             }

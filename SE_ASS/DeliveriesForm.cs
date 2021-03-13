@@ -383,12 +383,13 @@ namespace SE_ASS
 
         private void btnSaveEditDeliveryLC_Click(object sender, EventArgs e)
         {
+            DateTime startTime = Convert.ToDateTime("08:30");
+            DateTime endTime = Convert.ToDateTime("16:30");
+            DateTime cStartTime = Convert.ToDateTime(txtboxDeliverieHourStart.Text);
+            DateTime cEndtTime = Convert.ToDateTime(txtboxDeliveryHourEnd.Text);
 
-
-          
-
-
-
+            if (cStartTime > startTime && cEndtTime < endTime)
+            {
                 String Update = "UPDATE DeliveriesTbl SET DeliveryHoursStart='" + txtboxDeliverieHourStart.Text + "', DeliveryHoursEnd='" + txtboxDeliveryHourEnd.Text + "', DeliveryDayStart='" + txtboxDeliverieDayStart.Text + "', DeliveryDayEnd='" + txtboxDeliverieDayEnd.Text + "', CourierID='" + txtboxCourierID.Text + "', Contracted='" + txtboxContracted.Text + "' WHERE DeliveriesID='" + txtboxDeliverieID.Text + "'";
 
                 SqlConnection conn = new SqlConnection(newCon.ConnectionString);
@@ -413,20 +414,25 @@ namespace SE_ASS
                 }
 
                 conn.Close();
-          
-          
-            
-            if (label1.Text == "LC DELIVERIES")
-            {
-                DeliveriesForm DeliveriesForm = new DeliveriesForm();
-                this.Hide();
-                DeliveriesForm.Show();
-                DeliveriesForm.label1.Text = "LC DELIVERIES";
-                DeliveriesForm.btnSaveEditDeliveryLC.Visible = true;
-                DeliveriesForm.btnBackLCDeliveries.Visible = true;
-                DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
-                DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
+                if (label1.Text == "LC DELIVERIES")
+                {
+                    DeliveriesForm DeliveriesForm = new DeliveriesForm();
+                    this.Hide();
+                    DeliveriesForm.Show();
+                    DeliveriesForm.label1.Text = "LC DELIVERIES";
+                    DeliveriesForm.btnSaveEditDeliveryLC.Visible = true;
+                    DeliveriesForm.btnBackLCDeliveries.Visible = true;
+                    DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
+                    DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
+                }
+
             }
+            else
+            {
+                MessageBox.Show("Delivery times must be betwen 08:30 and 16:30"); 
+            }
+            
+           
             
         }
     }

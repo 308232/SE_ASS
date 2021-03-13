@@ -259,16 +259,16 @@ namespace SE_ASS
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtboxDeliverieIDC;
-        private System.Windows.Forms.TextBox txtboxDeliverieHourStartC;
-        private System.Windows.Forms.TextBox txtboxDeliveryHourEndC;
-        private System.Windows.Forms.TextBox txtboxDeliverieDayStartC;
-        private System.Windows.Forms.TextBox txtboxDeliverieDayEndC;
         private System.Windows.Forms.TextBox txtboxCourierIDC;
-        private System.Windows.Forms.TextBox txtboxContractedC;
         private System.Windows.Forms.Button btnAcceptAssC;
         private System.Windows.Forms.Button btnNextRecordC;
         private System.Windows.Forms.Button btnPreviousRecordC;
         private System.Windows.Forms.Button btnBackC;
+        public System.Windows.Forms.TextBox txtboxDeliverieIDC;
+        public System.Windows.Forms.TextBox txtboxDeliverieHourStartC;
+        public System.Windows.Forms.TextBox txtboxDeliveryHourEndC;
+        public System.Windows.Forms.TextBox txtboxDeliverieDayStartC;
+        public System.Windows.Forms.TextBox txtboxDeliverieDayEndC;
+        public System.Windows.Forms.TextBox txtboxContractedC;
     }
 }

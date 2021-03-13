@@ -225,6 +225,12 @@ namespace SE_ASS
             CourierAssForm CourierAssForm = new CourierAssForm();
             this.Hide();
             CourierAssForm.Show();
+            CourierAssForm.txtboxDeliverieIDC.Enabled = false;
+            CourierAssForm.txtboxDeliverieHourStartC.Enabled = false;
+            CourierAssForm.txtboxDeliveryHourEndC.Enabled = false;
+            CourierAssForm.txtboxDeliverieDayStartC.Enabled = false;
+            CourierAssForm.txtboxDeliverieDayEndC.Enabled = false;
+            CourierAssForm.txtboxContractedC.Enabled = false;
         }
     }
 }

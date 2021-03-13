@@ -200,7 +200,7 @@ namespace SE_ASS
             }
             else
             {
-                MessageBox.Show("You have no rights to create Contracted courier jobs");
+                MessageBox.Show("You have no rights to perform this");
             }
         }
 
@@ -315,7 +315,7 @@ namespace SE_ASS
 
             conn.Close();
             //if checking the titile label so it will load the corect functions when the delete button is pressed 
-            if (label1.Text == "WELCOME ADMIN")
+            if (label1.Text == "ADMIN DELIVERIES")
             {
                 DeliveriesForm DeliveriesForm = new DeliveriesForm();
                 this.Hide();
@@ -357,36 +357,36 @@ namespace SE_ASS
 
         private void btnSaveEditDeliveryLC_Click(object sender, EventArgs e)
         {
-          
-            //a private string to pass the data from the database to. 
-
-            //in order to read the dataabse sql code is used as shown below 
-
-            String Update = "UPDATE DeliveriesTbl SET DeliveryHoursStart='"+txtboxDeliverieHourStart.Text+"', DeliveryHoursEnd='"+txtboxDeliveryHourEnd.Text+"', DeliveryDayStart='"+txtboxDeliverieDayStart.Text+"', DeliveryDayEnd='"+txtboxDeliverieDayEnd.Text+"', CourierID='"+txtboxCourierID.Text+"', Contracted='"+txtboxContracted.Text+"' WHERE DeliveriesID='"+txtboxDeliverieID.Text+"'";
-
-            SqlConnection conn = new SqlConnection(newCon.ConnectionString);
-            SqlCommand cmd = new SqlCommand(Update, conn);
-            SqlDataReader read;
 
 
-            try
-            {
-                //open the database connection 
-
-                conn.Open();
-                read = cmd.ExecuteReader();
-                MessageBox.Show("Record Updated");
+            
 
 
-            }
-            catch
-            {
-                MessageBox.Show("Not able to update the databse ");
+                String Update = "UPDATE DeliveriesTbl SET DeliveryHoursStart='" + txtboxDeliverieHourStart.Text + "', DeliveryHoursEnd='" + txtboxDeliveryHourEnd.Text + "', DeliveryDayStart='" + txtboxDeliverieDayStart.Text + "', DeliveryDayEnd='" + txtboxDeliverieDayEnd.Text + "', CourierID='" + txtboxCourierID.Text + "', Contracted='" + txtboxContracted.Text + "' WHERE DeliveriesID='" + txtboxDeliverieID.Text + "'";
 
-            }
+                SqlConnection conn = new SqlConnection(newCon.ConnectionString);
+                SqlCommand cmd = new SqlCommand(Update, conn);
+                SqlDataReader read;
 
-            conn.Close();
 
+                try
+                {
+                    //open the database connection 
+
+                    conn.Open();
+                    read = cmd.ExecuteReader();
+                    MessageBox.Show("Record Updated");
+
+
+                }
+                catch
+                {
+                    MessageBox.Show("Not able to update the databse ");
+
+                }
+
+                conn.Close();
+            
             
             if (label1.Text == "LC DELIVERIES")
             {

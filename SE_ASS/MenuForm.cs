@@ -21,7 +21,7 @@ namespace SE_ASS
             InitializeComponent();
         }
 
-        private void btnSubmitUserNamePassword_Click(object sender, EventArgs e)
+        public void btnSubmitUserNamePassword_Click(object sender, EventArgs e)
         {
             if ((txtUserName.Text == "Owner") &&(txtPassword.Text=="asdf"))
             {
@@ -95,7 +95,7 @@ namespace SE_ASS
 
         }
 
-        private void MenuForm_Load(object sender, EventArgs e)
+        public void MenuForm_Load(object sender, EventArgs e)
         {
 
         }

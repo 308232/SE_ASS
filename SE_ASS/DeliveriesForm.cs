@@ -45,7 +45,7 @@ namespace SE_ASS
 
         }
 
-        private void DeliveriesForm_Load(object sender, EventArgs e)
+        public void DeliveriesForm_Load(object sender, EventArgs e)
         {
 
            
@@ -89,7 +89,7 @@ namespace SE_ASS
 
         }
 
-        private void btnAddNewCourierJob_Click(object sender, EventArgs e)
+        public void btnAddNewCourierJob_Click(object sender, EventArgs e)
         {
 
 
@@ -113,7 +113,7 @@ namespace SE_ASS
 
         }
 
-        private void btnNextRecordDeliveries_Click(object sender, EventArgs e)
+       public void btnNextRecordDeliveries_Click(object sender, EventArgs e)
         {
             if (whichrec < countrec - 1)
             {
@@ -122,7 +122,7 @@ namespace SE_ASS
             }
         }
 
-        private void btnPreviousRecordDeliveries_Click(object sender, EventArgs e)
+        public void btnPreviousRecordDeliveries_Click(object sender, EventArgs e)
         {
             if (whichrec > 0)
             {
@@ -131,7 +131,7 @@ namespace SE_ASS
             }
         }
 
-        private void btnSaveDeliveries_Click(object sender, EventArgs e)
+        public void btnSaveDeliveries_Click(object sender, EventArgs e)
         {
              
             if (txtboxContracted.Text == "n" && label1.Text=="ADMIN DELIVERIES")
@@ -230,7 +230,7 @@ namespace SE_ASS
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        public void btnRefresh_Click(object sender, EventArgs e)
         {
             if (label1.Text == "LC DELIVERIES")
             {
@@ -258,14 +258,14 @@ namespace SE_ASS
             }
          }
 
-        private void btnBackdeliveriesAdmin_Click(object sender, EventArgs e)
+       public void btnBackdeliveriesAdmin_Click(object sender, EventArgs e)
         {
             MainForm MainForm = new MainForm();
             this.Hide();
             MainForm.Show();
         }
 
-        private void btnCancelAdd_Click(object sender, EventArgs e)
+        public void btnCancelAdd_Click(object sender, EventArgs e)
         {
             if (label1.Text == "LC DELIVERIES")
             {
@@ -295,7 +295,7 @@ namespace SE_ASS
             }
         }
 
-        private void btnBackLCDeliveries_Click(object sender, EventArgs e)
+        public void btnBackLCDeliveries_Click(object sender, EventArgs e)
         {
             MainForm MainForm = new MainForm();
             this.Hide();
@@ -304,7 +304,7 @@ namespace SE_ASS
             MainForm.button1.Visible = false;
         }
 
-        private void btnDeleteDeliverie_Click(object sender, EventArgs e)
+       public void btnDeleteDeliverie_Click(object sender, EventArgs e)
         {
 
             //setting DataSet to populate with the data I use the same name as in my customer form 
@@ -366,7 +366,7 @@ namespace SE_ASS
 
         }
 
-        private void btnEditLCDeliveries_Click(object sender, EventArgs e)
+        public void btnEditLCDeliveries_Click(object sender, EventArgs e)
         {
             txtboxDeliverieID.Enabled = false;
             btnNextRecordDeliveries.Visible = false;
@@ -381,7 +381,7 @@ namespace SE_ASS
 
         }
 
-        private void btnSaveEditDeliveryLC_Click(object sender, EventArgs e)
+       public void btnSaveEditDeliveryLC_Click(object sender, EventArgs e)
         {
             DateTime startTime = Convert.ToDateTime("08:30");
             DateTime endTime = Convert.ToDateTime("16:30");

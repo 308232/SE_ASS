@@ -35,7 +35,11 @@ namespace SE_ASS
 
        public void MoveRecords()
         {
+            //a method for navigationg between records 
+
             DataRow OneRecord = dsCustomer.Tables["Customers"].Rows[whichrec];
+
+            //populating the textboxes with matching data from the database
 
            txtboxClientID.Text = OneRecord[0].ToString();
             txtboxBusinessName.Text = OneRecord[1].ToString();
@@ -52,6 +56,9 @@ namespace SE_ASS
 
         private void NewClientForm_Load(object sender, EventArgs e)
         {
+
+            //On form load loads the connection to the database and gets all the data from the Clients Tbl in order to display the records 
+
             btnUPDATE.Visible = false;
 
             newCon = new System.Data.SqlClient.SqlConnection();
@@ -75,13 +82,14 @@ namespace SE_ASS
 
 
 
-
+                //calling move records method created above to display the data inot the text boxes 
                 MoveRecords();
                 countrec = dsCustomer.Tables["Customers"].Rows.Count;
                 
             }
             catch
             {
+                //message if there is no connection with the database 
                 MessageBox.Show("no connection ");
 
             }
@@ -90,12 +98,14 @@ namespace SE_ASS
 
         private void btnFirstRecordClientsForm_Click(object sender, EventArgs e)
         {
+            //button for moving to the first record 
             whichrec = 0;
             MoveRecords();
         }
 
         private void btnNextRecordClientsForm_Click(object sender, EventArgs e)
         {
+            //button for moving to the next record 
             if (whichrec < countrec - 1)
             {
                 whichrec++;
@@ -105,6 +115,8 @@ namespace SE_ASS
 
         private void btnSaveNewClientRecord_Click(object sender, EventArgs e)
         {
+            //button that gets the text from the text boxes and saves it as a new record in the database  
+
             DataRow OneRecord = dsCustomer.Tables["Customers"].NewRow();
             OneRecord[0] = txtboxClientID.Text;
             OneRecord[1] = txtboxBusinessName.Text;
@@ -124,11 +136,13 @@ namespace SE_ASS
             countrec++;
             whichrec = countrec - 1;
 
+            //creating sqlbulder and a new instance of the databse in order to update it with the new record 
             System.Data.SqlClient.SqlCommandBuilder myUpdateDB;
             myUpdateDB = new System.Data.SqlClient.SqlCommandBuilder(daCustomer);
             myUpdateDB.DataAdapter.Update(dsCustomer.Tables["Customers"]);
             MessageBox.Show("Record Saved");
 
+            //reloading the form again with all the matching properties for the current user 
             NewClientForm NewClientForm = new NewClientForm();
             NewClientForm.btnBackLC.Visible = false;
             NewClientForm.btnBackOwner.Visible = false;
@@ -144,6 +158,7 @@ namespace SE_ASS
 
         private void btnAddNewClient_Click(object sender, EventArgs e)
         {
+            //clears all the text boxes so they will be empty waiting for an entry input 
             txtboxClientID.Clear();
             txtboxBusinessName.Clear();
             txtboxHouseNo.Clear();
@@ -163,12 +178,14 @@ namespace SE_ASS
 
         private void btnLastRecordClientsForm_Click(object sender, EventArgs e)
         {
+            //button for showing Last record of the database 
             whichrec = countrec - 1;
             MoveRecords();
         }
 
         private void btnPreviusRecordClientsForm_Click(object sender, EventArgs e)
         {
+            //button for showing Previous record of the database 
             if (whichrec > 0)
             {
                 whichrec--;
@@ -178,18 +195,20 @@ namespace SE_ASS
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
+            //Exit button 
             Application.Exit();
         }
 
         private void btnLastRecord_Click(object sender, EventArgs e)
         {
+            //showing the last record of the database 
             whichrec = countrec - 1;
             MoveRecords();
         }
 
         private void btnPreviusRecord_Click(object sender, EventArgs e)
         {
-
+            //button for showing Previous record of the database 
             if (whichrec > 0)
             {
                 whichrec--;
@@ -199,6 +218,7 @@ namespace SE_ASS
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            //back button for the Admin 
             MainForm MainForm = new MainForm();
             this.Hide();
             MainForm.Show();
@@ -206,6 +226,8 @@ namespace SE_ASS
 
         private void btnBackLC_Click(object sender, EventArgs e)
         {
+            //back button 
+
             MainForm MainForm = new MainForm();
             this.Hide();
             MainForm.Show();
@@ -215,6 +237,8 @@ namespace SE_ASS
 
         private void btnBackOwner_Click(object sender, EventArgs e)
         {
+            //back button for the Owner 
+
             MainForm MainForm = new MainForm();
             MainForm.btnAllCAss.Visible = false;
             MainForm.label4.Visible = false;
@@ -232,6 +256,8 @@ namespace SE_ASS
 
         private void btnEDIT_Click(object sender, EventArgs e)
         {
+            //When the edit button is pressed hides and shows matching buttons in order to proceed with the update 
+
             txtboxClientID.Enabled = false;
             btnSaveNewClientRecord.Visible = false;
             btnAddNewClient.Visible = false;
@@ -248,7 +274,7 @@ namespace SE_ASS
         private void btnUPDATE_Click(object sender, EventArgs e)
         {
 
-            
+            // a separate connection in order to update an excisting record in the database 
             dsCustomer = new DataSet();
             
 
@@ -281,8 +307,11 @@ namespace SE_ASS
                 MessageBox.Show("Not able to update the databse ");
 
             }
-            
+            //close the database connection 
+
             conn.Close();
+
+            //hide and show buttons for current user 
 
             btnFirstRecordClientsForm.Visible = true;
             btnNextRecordClientsForm.Visible = true;
@@ -295,6 +324,8 @@ namespace SE_ASS
             btnAddNewClient.Visible = true;
             if (label1.Text == "LC CLIENT FORM")
             {
+                //depending on the update the database needs to be refreshed and show again only the buttons available for the current user
+                //loads the form again with all its properties LC
                 NewClientForm NewClientForm = new NewClientForm();
                 NewClientForm.btnBack.Visible = false;
                 NewClientForm.btnBackLC.Visible = true;
@@ -310,6 +341,8 @@ namespace SE_ASS
             }
             else if (label1.Text == "ADMIN CLIENT FORM")
             {
+                //depending on the update the database needs to be refreshed and show again only the buttons available for the current user
+                //loads the form again with all its properties Admin
                 NewClientForm NewClientForm = new NewClientForm();
                 NewClientForm.btnBackLC.Visible = false;
                 NewClientForm.btnBackOwner.Visible = false;

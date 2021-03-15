@@ -16,11 +16,12 @@ namespace SE_ASS
 {
     public partial class DeliveriesForm : Form
     {
-
+        //two integers are creted in order to keep track on which number of customer are we looking at in order to be able to check last record and first record as well as adding a new customer 
         public int whichrec = 0;
         public int countrec = 0;
 
         System.Data.SqlClient.SqlConnection newCon;
+        //in order to read the information and pass it to the text boxes a data adapater and data set must be set 
         DataSet dsCustomer;
         System.Data.SqlClient.SqlDataAdapter daCustomer;
 
@@ -32,8 +33,11 @@ namespace SE_ASS
         }
         public void MoveRecords()
         {
+            //a method for navigationg between records 
+
             DataRow OneRecord = dsCustomer.Tables["Deliveries"].Rows[whichrec];
 
+            //populating the textboxes with matching data from the database
             txtboxDeliverieID.Text = OneRecord[0].ToString();
             txtboxDeliverieHourStart.Text = OneRecord[1].ToString();
             txtboxDeliveryHourEnd.Text = OneRecord[2].ToString();
@@ -50,8 +54,9 @@ namespace SE_ASS
 
            
                 btnCancelAdd.Visible = false;
+            //On form load loads the connection to the database and gets all the data from the Clients Tbl in order to display the records 
 
-                newCon = new System.Data.SqlClient.SqlConnection();
+            newCon = new System.Data.SqlClient.SqlConnection();
                 newCon.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Mitko Bozhilov\\Work Year 6\\Software Eng\\Ass\\MyDataBase\\MyDataBase\\BookingSystemDataBase.mdf;Integrated Security=True; Connect Timeout=30";
 
                 dsCustomer = new DataSet();
@@ -71,15 +76,17 @@ namespace SE_ASS
                     daCustomer.Fill(dsCustomer, "Deliveries");
 
 
+                //calling move records method created above to display the data inot the text boxes 
 
-                    MoveRecords();
+                     MoveRecords();
                     countrec = dsCustomer.Tables["Deliveries"].Rows.Count;
 
 
                 }
                 catch
                 {
-                    MessageBox.Show("no connection ");
+                //message if there is no connection with the database 
+                MessageBox.Show("no connection ");
 
                 }
                 newCon.Close();
@@ -91,7 +98,7 @@ namespace SE_ASS
 
         public void btnAddNewCourierJob_Click(object sender, EventArgs e)
         {
-
+            //pressing the buttons clears the textboxes and hides some of the buttons in order for the user to add a new job 
 
             btnSaveDeliveries.Visible = true;
             btnPreviousRecordDeliveries.Visible = false;
@@ -133,16 +140,18 @@ namespace SE_ASS
 
         public void btnSaveDeliveries_Click(object sender, EventArgs e)
         {
-             
+             //if checking if the new delivery job created is from contracted or non contracted client . Admin can add only non contracted client 
             if (txtboxContracted.Text == "n" && label1.Text=="ADMIN DELIVERIES")
             {
                 DateTime startTime = Convert.ToDateTime("08:30");
                 DateTime endTime = Convert.ToDateTime("16:30");
                 DateTime cStartTime = Convert.ToDateTime(txtboxDeliverieHourStart.Text);
                 DateTime cEndtTime = Convert.ToDateTime(txtboxDeliveryHourEnd.Text);
-
+                //another if making sure that the time that has been enetered is inside the working hours of the company 08:30-16:30
                 if (cStartTime > startTime && cEndtTime < endTime)
                 {
+                    //if the time is correct creates the new record 
+
                     DataRow OneRecord = dsCustomer.Tables["Deliveries"].NewRow();
                     OneRecord[0] = txtboxDeliverieID.Text;
                     OneRecord[1] = txtboxDeliverieHourStart.Text;
@@ -175,17 +184,21 @@ namespace SE_ASS
                 }
                 else
                 {
+                    //mesage if the time entered is wrong 
                     MessageBox.Show("The Time must be between 08:30 and 16:30");
                 }
                 
             }
             else if(txtboxContracted.Text == "y" && label1.Text == "LC DELIVERIES")
             {
+                //the else if contracted job is added 
+
                 DateTime startTime = Convert.ToDateTime("08:30");
                 DateTime endTime = Convert.ToDateTime("16:30");
                 DateTime cStartTime = Convert.ToDateTime(txtboxDeliverieHourStart.Text);
                 DateTime cEndtTime = Convert.ToDateTime(txtboxDeliveryHourEnd.Text);
 
+                //again checks about the time if its between 8:30-16:30 and then creates the record 
                 if (cStartTime > startTime && cEndtTime < endTime)
                 {
                     DataRow OneRecord = dsCustomer.Tables["Deliveries"].NewRow();
@@ -232,6 +245,8 @@ namespace SE_ASS
 
         public void btnRefresh_Click(object sender, EventArgs e)
         {
+            //a refresh button in order to refresh the data from the database
+            //if statemnet checking for the text in the title label so after refreshing will load the form with all matching properties for the user that is logged in 
             if (label1.Text == "LC DELIVERIES")
             {
 
@@ -267,9 +282,10 @@ namespace SE_ASS
 
         public void btnCancelAdd_Click(object sender, EventArgs e)
         {
+            //if for canceling to add a new delivery and checking who is logged in 
             if (label1.Text == "LC DELIVERIES")
             {
-
+               //depending on who is logged in hides and shows buttons when loading the form 
                 DeliveriesForm DeliveriesForm = new DeliveriesForm();
                 this.Hide();
                 DeliveriesForm.Show();
@@ -284,6 +300,7 @@ namespace SE_ASS
             }
             else if (label1.Text == "ADMIN DELIVERIES")
             {
+                //depending on who is logged in hides and shows buttons when loading the form 
                 DeliveriesForm DeliveriesForm = new DeliveriesForm();
                 this.Hide();
                 DeliveriesForm.Show();
@@ -412,8 +429,12 @@ namespace SE_ASS
                     MessageBox.Show("Not able to update the databse ");
 
                 }
-
+                //closing the databse connection 
                 conn.Close();
+                //if checking which form properties to load when the editsave button is pressed  
+
+                
+
                 if (label1.Text == "LC DELIVERIES")
                 {
                     DeliveriesForm DeliveriesForm = new DeliveriesForm();

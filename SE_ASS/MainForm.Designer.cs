@@ -288,6 +288,7 @@ namespace SE_ASS
             this.Controls.Add(this.lblTitle);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdmin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

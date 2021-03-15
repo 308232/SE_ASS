@@ -23,10 +23,13 @@ namespace SE_ASS
 
         public void btnSubmitUserNamePassword_Click(object sender, EventArgs e)
         {
+            //if statemnet in order to check Username and password 
             if ((txtUserName.Text == "Owner") &&(txtPassword.Text=="asdf"))
             {
                 userRights = "Owner";
 
+                //Assignnng different rights to different people depending on the username and password. Hiding and showing buttons and then loading the Mainform if Owner is logged in
+                //hiding, showing the correct buttons and changing the titile label to match the correct user 
                 MainForm MainForm = new MainForm();
                 MainForm.btnAllCAss.Visible = false;
                 MainForm.label4.Visible = false;
@@ -44,6 +47,7 @@ namespace SE_ASS
             }
             else if ((txtUserName.Text == "Admin") && (txtPassword.Text == "asd"))
             {
+                //Assignnng different rights to different people depending on the username and password. Hiding and showing buttons and then loading the Mainform if Admin is logged in
                 userRights = "Admin";
 
                 MainForm MainForm = new MainForm();
@@ -55,17 +59,23 @@ namespace SE_ASS
             {
                 userRights = "LC";
 
-               MainForm MainForm = new MainForm();
+                //Assignnng different rights to different people depending on the username and password. Hiding and showing buttons and then loading the Mainform if LC is logged in
+
+                MainForm MainForm = new MainForm();
                 this.Hide();
                 MainForm.Show();
+                //hiding, showing the correct buttons and changing the titile label to match the correct user 
                 MainForm.lblTitle.Text = "WELCOME LC";
                 MainForm.button1.Visible = false;
             }
             else if ((txtUserName.Text == "a") && (txtPassword.Text == "a"))
             {
+                //Assignnng different rights to different people depending on the username and password. Hiding and showing buttons and then loading the Mainform if Courier is logged in
                 userRights = "Couriers";
                 MainForm MainForm = new MainForm();
                 this.Hide();
+
+                //hiding, showing the correct buttons and changing the titile label to match the correct user 
                 MainForm.Show();
                 MainForm.lblTitle.Text = "WELCOME COURIER";
                 MainForm.button1.Visible = false;
@@ -84,6 +94,7 @@ namespace SE_ASS
             }
             else
             {
+                //message if wron username and password is entered 
                 MessageBox.Show("You Have entered incorect username or password. Please try again");
                 txtUserName.Clear();
                 txtPassword.Clear();

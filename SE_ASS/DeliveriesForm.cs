@@ -407,46 +407,47 @@ namespace SE_ASS
 
             if (cStartTime > startTime && cEndtTime < endTime)
             {
-                String Update = "UPDATE DeliveriesTbl SET DeliveryHoursStart='" + txtboxDeliverieHourStart.Text + "', DeliveryHoursEnd='" + txtboxDeliveryHourEnd.Text + "', DeliveryDayStart='" + txtboxDeliverieDayStart.Text + "', DeliveryDayEnd='" + txtboxDeliverieDayEnd.Text + "', CourierID='" + txtboxCourierID.Text + "', Contracted='" + txtboxContracted.Text + "' WHERE DeliveriesID='" + txtboxDeliverieID.Text + "'";
-
-                SqlConnection conn = new SqlConnection(newCon.ConnectionString);
-                SqlCommand cmd = new SqlCommand(Update, conn);
-                SqlDataReader read;
-
-
-                try
-                {
-                    //open the database connection 
-
-                    conn.Open();
-                    read = cmd.ExecuteReader();
-                    MessageBox.Show("Record Updated");
-
-
-                }
-                catch
-                {
-                    MessageBox.Show("Not able to update the databse ");
-
-                }
-                //closing the databse connection 
-                conn.Close();
-                //if checking which form properties to load when the editsave button is pressed  
-
                 
+                    String Update = "UPDATE DeliveriesTbl SET DeliveryHoursStart='" + txtboxDeliverieHourStart.Text + "', DeliveryHoursEnd='" + txtboxDeliveryHourEnd.Text + "', DeliveryDayStart='" + txtboxDeliverieDayStart.Text + "', DeliveryDayEnd='" + txtboxDeliverieDayEnd.Text + "', CourierID='" + txtboxCourierID.Text + "', Contracted='" + txtboxContracted.Text + "' WHERE DeliveriesID='" + txtboxDeliverieID.Text + "'";
 
-                if (label1.Text == "LC DELIVERIES")
-                {
-                    DeliveriesForm DeliveriesForm = new DeliveriesForm();
-                    this.Hide();
-                    DeliveriesForm.Show();
-                    DeliveriesForm.label1.Text = "LC DELIVERIES";
-                    DeliveriesForm.btnSaveEditDeliveryLC.Visible = true;
-                    DeliveriesForm.btnBackLCDeliveries.Visible = true;
-                    DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
-                    DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
-                }
+                    SqlConnection conn = new SqlConnection(newCon.ConnectionString);
+                    SqlCommand cmd = new SqlCommand(Update, conn);
+                    SqlDataReader read;
 
+
+                    try
+                    {
+                        //open the database connection 
+
+                        conn.Open();
+                        read = cmd.ExecuteReader();
+                        MessageBox.Show("Record Updated");
+
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Not able to update the databse ");
+
+                    }
+                    //closing the databse connection 
+                    conn.Close();
+                    //if checking which form properties to load when the editsave button is pressed  
+
+
+
+                    if (label1.Text == "LC DELIVERIES")
+                    {
+                        DeliveriesForm DeliveriesForm = new DeliveriesForm();
+                        this.Hide();
+                        DeliveriesForm.Show();
+                        DeliveriesForm.label1.Text = "LC DELIVERIES";
+                        DeliveriesForm.btnSaveEditDeliveryLC.Visible = true;
+                        DeliveriesForm.btnBackLCDeliveries.Visible = true;
+                        DeliveriesForm.btnBackdeliveriesAdmin.Visible = false;
+                        DeliveriesForm.btnSaveEditDeliveryLC.Visible = false;
+                    }
+                
             }
             else
             {
